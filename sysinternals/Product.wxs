@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Product Id="*" Name="sysinternals" Language="1033" Version="1.0.0.0" Manufacturer="Sysinternals" UpgradeCode="2b7434d5-dee1-49ab-84e8-7f5a5753b9cc">
-		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perUser" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
 		<Media Id="1" Cabinet="sysinternals.cab" EmbedCab="yes" CompressionLevel="high" />
 
 		<Directory Id="TARGETDIR" Name="SourceDir">
-			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="sysinternals" />
+			<Directory Id="LocalAppDataFolder">
+				<Directory Id="INSTALLFOLDER" Name="Sysinternals" />
 			</Directory>
 			<Directory Id="ProgramMenuFolder">
 				<Directory Id="ApplicationProgramsFolder" Name="Sysinternals">
 					<Component Id="Sysinternals" Guid="C9C3211A-A59F-4360-B853-E0B46C2CB039">
 						<RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Type='string' Value='' KeyPath='yes' />
+						<Environment Id="ThePath" Action="set" Part="last" Name="PATH" System="no" Value=";[INSTALLFOLDER]" />
 						<RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
 					</Component>
 				</Directory>
