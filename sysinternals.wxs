@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="Sysinternals Suite (14.03.27)" Language="1033" Version="14.03.27" Manufacturer="Microsoft" UpgradeCode="2b7434d5-dee1-49ab-84e8-7f5a5753b9cc">
+
+    <Package Description="Sysinternals Suite" Comments="Sysinterns Suite Installer" InstallerVersion="200" Compressed="yes" InstallPrivileges="limited" ></Package>
+
+    <Upgrade Id="2b7434d5-dee1-49ab-84e8-7f5a5753b9cc">
+      <UpgradeVersion OnlyDetect="no" Property="PREVIOUSFOUND" Minimum="1.0.0" IncludeMinimum="yes" Maximum="14.03.27" IncludeMaximum="no"></UpgradeVersion>
+    </Upgrade>
+
+    <WixVariable Id="WixUILicenseRtf" Value="eula.txt"></WixVariable>
+
+    <MediaTemplate EmbedCab="yes" />
+
+    <MajorUpgrade
+      Schedule="afterInstallFinalize"
+      DowngradeErrorMessage="A later version of Sysinternals Suite is currently installed. Setup will now exit." />
+
+    <!-- This condition enforces that the ALLUSERS property is not set because this MSI is only ever     -->
+    <!-- intended to be a per-user installation.                                                         -->
+    <Condition Message="Setting the ALLUSERS property is not allowed because [ProductName] is a per-user application. Setup will now exit.">
+      NOT ALLUSERS
+    </Condition>
+
+    <Directory Id="TARGETDIR" Name="SourceDir" DiskId="1">
+    
+      <!-- The install directory -->
+      <Directory Id="LocalAppDataFolder">
+        <Directory Id="INSTALLFOLDER" Name="Sysinternals">
+        </Directory>
+      </Directory>
+      
+      <!-- The shortcuts directory -->
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Sysinternals">
+            <Component Id="shortcuts" Guid="1231ee4d-dd0a-4f7f-a4d1-1d181d2f3123" DiskId="1">
+                <CreateFolder/>
+                <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall"/>
+                <RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Type='string' Value='' KeyPath='yes' />
+            </Component>
+        </Directory>
+      </Directory>
+      
+    </Directory>
+
+    <ComponentGroup Id="Sysinternals" Directory="INSTALLFOLDER">
+      <Component Id="Sysinternals" Guid="a9b5c8de-ecfe-4a32-9f06-32a848ecfffa" >
+        <RemoveFolder Id="INSTALLFOLDER" On="uninstall"/>
+        <RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Type='string' Value='' KeyPath='yes' />
+        <Environment Id="PATH" Action="set" Part="first" Name="PATH" System="no" Value="[INSTALLFOLDER]"/>
+        <File Source="sysinternals\accesschk.exe"/>
+        <File Source="sysinternals\AccessEnum.exe"/>
+        <File Source="sysinternals\AdExplorer.chm"/>
+        <File Source="sysinternals\ADExplorer.exe"/>
+        <File Source="sysinternals\ADInsight.chm"/>
+        <File Source="sysinternals\ADInsight.exe"/>
+        <File Source="sysinternals\adrestore.exe"/>
+        <File Source="sysinternals\Autologon.exe"/>
+        <File Source="sysinternals\autoruns.chm"/>
+        <File Source="sysinternals\autoruns.exe"/>
+        <File Source="sysinternals\autorunsc.exe"/>
+        <File Source="sysinternals\Bginfo.exe"/>
+        <File Source="sysinternals\Cacheset.exe"/>
+        <File Source="sysinternals\Clockres.exe"/>
+        <File Source="sysinternals\Contig.exe"/>
+        <File Source="sysinternals\Coreinfo.exe"/>
+        <File Source="sysinternals\ctrl2cap.exe"/>
+        <File Source="sysinternals\dbgview.chm"/>
+        <File Source="sysinternals\Dbgview.exe"/>
+        <File Source="sysinternals\DEFRAG.EXE"/>
+        <File Source="sysinternals\Desktops.exe"/>
+        <File Source="sysinternals\Disk2vhd.chm"/>
+        <File Source="sysinternals\disk2vhd.exe"/>
+        <File Source="sysinternals\diskext.exe"/>
+        <File Source="sysinternals\Diskmon.exe"/>
+        <File Source="sysinternals\DISKMON.HLP"/>
+        <File Source="sysinternals\DiskView.exe"/>
+        <File Source="sysinternals\du.exe"/>
+        <File Source="sysinternals\efsdump.exe"/>
+        <File Source="sysinternals\Eula.txt"/>
+        <File Source="sysinternals\FindLinks.exe"/>
+        <File Source="sysinternals\handle.exe"/>
+        <File Source="sysinternals\hex2dec.exe"/>
+        <File Source="sysinternals\junction.exe"/>
+        <File Source="sysinternals\ldmdump.exe"/>
+        <File Source="sysinternals\Listdlls.exe"/>
+        <File Source="sysinternals\livekd.exe"/>
+        <File Source="sysinternals\LoadOrd.exe"/>
+        <File Source="sysinternals\logonsessions.exe"/>
+        <File Source="sysinternals\movefile.exe"/>
+        <File Source="sysinternals\ntfsinfo.exe"/>
+        <File Source="sysinternals\pagedfrg.exe"/>
+        <File Source="sysinternals\pagedfrg.hlp"/>
+        <File Source="sysinternals\pendmoves.exe"/>
+        <File Source="sysinternals\pipelist.exe"/>
+        <File Source="sysinternals\portmon.exe"/>
+        <File Source="sysinternals\PORTMON.HLP"/>
+        <File Source="sysinternals\procdump.exe"/>
+        <File Source="sysinternals\procexp.chm"/>
+        <File Source="sysinternals\procexp.exe"/>
+        <File Source="sysinternals\procmon.chm"/>
+        <File Source="sysinternals\Procmon.exe"/>
+        <File Source="sysinternals\psexec.exe"/>
+        <File Source="sysinternals\psfile.exe"/>
+        <File Source="sysinternals\psgetsid.exe"/>
+        <File Source="sysinternals\Psinfo.exe"/>
+        <File Source="sysinternals\pskill.exe"/>
+        <File Source="sysinternals\pslist.exe"/>
+        <File Source="sysinternals\psloggedon.exe"/>
+        <File Source="sysinternals\psloglist.exe"/>
+        <File Source="sysinternals\pspasswd.exe"/>
+        <File Source="sysinternals\psping.exe"/>
+        <File Source="sysinternals\psservice.exe"/>
+        <File Source="sysinternals\psshutdown.exe"/>
+        <File Source="sysinternals\pssuspend.exe"/>
+        <File Source="sysinternals\Pstools.chm"/>
+        <File Source="sysinternals\RAMMap.exe"/>
+        <File Source="sysinternals\RegDelNull.exe"/>
+        <File Source="sysinternals\Reghide.exe"/>
+        <File Source="sysinternals\regjump.exe"/>
+        <File Source="sysinternals\RootkitRevealer.chm"/>
+        <File Source="sysinternals\RootkitRevealer.exe"/>
+        <File Source="sysinternals\ru.exe"/>
+        <File Source="sysinternals\sdelete.exe"/>
+        <File Source="sysinternals\ShareEnum.exe"/>
+        <File Source="sysinternals\ShellRunas.exe"/>
+        <File Source="sysinternals\sigcheck.exe"/>
+        <File Source="sysinternals\streams.exe"/>
+        <File Source="sysinternals\strings.exe"/>
+        <File Source="sysinternals\sync.exe"/>
+        <File Source="sysinternals\tcpvcon.exe"/>
+        <File Source="sysinternals\tcpview.chm"/>
+        <File Source="sysinternals\Tcpview.exe"/>
+        <File Source="sysinternals\TCPVIEW.HLP"/>
+        <File Source="sysinternals\Vmmap.chm"/>
+        <File Source="sysinternals\vmmap.exe"/>
+        <File Source="sysinternals\Volumeid.exe"/>
+        <File Source="sysinternals\whois.exe"/>
+        <File Source="sysinternals\Winobj.exe"/>
+        <File Source="sysinternals\WINOBJ.HLP"/>
+        <File Source="sysinternals\ZoomIt.exe"/>
+        <File Source="sysinternals\ZoomIt64.exe"/>
+        <File Source="sysinternals\PORTMON.CNT"/>
+        <File Source="sysinternals\ctrl2cap.amd.sys"/>
+        <File Source="sysinternals\ctrl2cap.nt4.sys"/>
+        <File Source="sysinternals\ctrl2cap.nt5.sys"/>
+        <File Source="sysinternals\DMON.SYS"/>
+
+    <!-- NON GUI : shortcuts not needed
+        <Shortcut Target="[#accesschk.exe]"  Id="accesschkexeShortcut" Name="Accesschk" Description="Sysinternals accesschk" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#adrestore.exe]"  Id="adrestoreexeShortcut" Name="adrestore" Description="Sysinternals adrestore" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Autologon.exe]"  Id="AutologonexeShortcut" Name="Autologon" Description="Sysinternals Autologon" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Clockres.exe]"  Id="ClockresexeShortcut" Name="Clockres" Description="Sysinternals Clockres" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Contig.exe]"  Id="ContigexeShortcut" Name="Contig" Description="Sysinternals Contig" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Coreinfo.exe]"  Id="CoreinfoexeShortcut" Name="Coreinfo" Description="Sysinternals Coreinfo" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#ctrl2cap.exe]"  Id="ctrl2capexeShortcut" Name="ctrl2cap" Description="Sysinternals ctrl2cap" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#DEFRAG.EXE]"  Id="DEFRAGEXEShortcut" Name="DEFRAG" Description="Sysinternals DEFRAG" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#diskext.exe]"  Id="diskextexeShortcut" Name="diskext" Description="Sysinternals diskext" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#du.exe]"  Id="duexeShortcut" Name="du" Description="Sysinternals du" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#efsdump.exe]"  Id="efsdumpexeShortcut" Name="efsdump" Description="Sysinternals efsdump" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#FindLinks.exe]"  Id="FindLinksexeShortcut" Name="FindLinks" Description="Sysinternals FindLinks" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#handle.exe]"  Id="handleexeShortcut" Name="handle" Description="Sysinternals handle" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#hex2dec.exe]"  Id="hex2decexeShortcut" Name="hex2dec" Description="Sysinternals hex2dec" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#junction.exe]"  Id="junctionexeShortcut" Name="junction" Description="Sysinternals junction" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#ldmdump.exe]"  Id="ldmdumpexeShortcut" Name="ldmdump" Description="Sysinternals ldmdump" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Listdlls.exe]"  Id="ListdllsexeShortcut" Name="Listdlls" Description="Sysinternals Listdlls" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#livekd.exe]"  Id="livekdexeShortcut" Name="livekd" Description="Sysinternals livekd" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#logonsessions.exe]"  Id="logonsessionsexeShortcut" Name="logonsessions" Description="Sysinternals logonsessions" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#movefile.exe]"  Id="movefileexeShortcut" Name="movefile" Description="Sysinternals movefile" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#ntfsinfo.exe]"  Id="ntfsinfoexeShortcut" Name="ntfsinfo" Description="Sysinternals ntfsinfo" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#pendmoves.exe]"  Id="pendmovesexeShortcut" Name="pendmoves" Description="Sysinternals pendmoves" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#pipelist.exe]"  Id="pipelistexeShortcut" Name="pipelist" Description="Sysinternals pipelist" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#procdump.exe]"  Id="procdumpexeShortcut" Name="procdump" Description="Sysinternals procdump" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#psexec.exe]"  Id="psexecexeShortcut" Name="psexec" Description="Sysinternals psexec" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#psfile.exe]"  Id="psfileexeShortcut" Name="psFile" Description="Sysinternals psFile" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#psgetsid.exe]"  Id="psgetsidexeShortcut" Name="psgetsid" Description="Sysinternals psgetsid" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Psinfo.exe]"  Id="PsinfoexeShortcut" Name="Psinfo" Description="Sysinternals Psinfo" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#pskill.exe]"  Id="pskillexeShortcut" Name="pskill" Description="Sysinternals pskill" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#pslist.exe]"  Id="pslistexeShortcut" Name="pslist" Description="Sysinternals pslist" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#psloggedon.exe]"  Id="psloggedonexeShortcut" Name="psloggedon" Description="Sysinternals psloggedon" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#psloglist.exe]"  Id="psloglistexeShortcut" Name="psloglist" Description="Sysinternals psloglist" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#pspasswd.exe]"  Id="pspasswdexeShortcut" Name="pspasswd" Description="Sysinternals pspasswd" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#psping.exe]"  Id="pspingexeShortcut" Name="psping" Description="Sysinternals psping" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#psservice.exe]"  Id="psserviceexeShortcut" Name="psservice" Description="Sysinternals psservice" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#psshutdown.exe]"  Id="psshutdownexeShortcut" Name="psshutdown" Description="Sysinternals psshutdown" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#pssuspend.exe]"  Id="pssuspendexeShortcut" Name="pssuspend" Description="Sysinternals pssuspend" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#RegDelNull.exe]"  Id="RegDelNullexeShortcut" Name="RegDelNull" Description="Sysinternals RegDelNull" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Reghide.exe]"  Id="ReghideexeShortcut" Name="Reghide" Description="Sysinternals Reghide" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#regjump.exe]"  Id="regjumpexeShortcut" Name="regjump" Description="Sysinternals regjump" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#ru.exe]"  Id="ruexeShortcut" Name="ru" Description="Sysinternals ru" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#sdelete.exe]"  Id="sdeleteexeShortcut" Name="sdelete" Description="Sysinternals sdelete" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#sigcheck.exe]"  Id="sigcheckexeShortcut" Name="sigcheck" Description="Sysinternals sigcheck" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#streams.exe]"  Id="streamsexeShortcut" Name="streams" Description="Sysinternals streams" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#strings.exe]"  Id="stringsexeShortcut" Name="strings" Description="Sysinternals strings" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#sync.exe]"  Id="syncexeShortcut" Name="sync" Description="Sysinternals sync" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Volumeid.exe]"  Id="VolumeidexeShortcut" Name="Volumeid" Description="Sysinternals Volumeid" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#whois.exe]"  Id="whoisexeShortcut" Name="whois" Description="Sysinternals whois" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+    -->
+    
+        <Shortcut Target="[#AccessEnum.exe]"  Id="AccessEnumexeShortcut" Name="AccessEnum" Description="Sysinternals AccessEnum" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#ADExplorer.exe]"  Id="ADExplorerexeShortcut" Name="ADExplorer" Description="Sysinternals ADExplorer" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#ADInsight.exe]"  Id="ADInsightexeShortcut" Name="ADInsight" Description="Sysinternals ADInsight" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#autoruns.exe]"  Id="autorunsexeShortcut" Name="autoruns" Description="Sysinternals autoruns" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#autorunsc.exe]"  Id="autorunscexeShortcut" Name="autorunsc" Description="Sysinternals autorunsc" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Bginfo.exe]"  Id="BginfoexeShortcut" Name="Bginfo" Description="Sysinternals Bginfo" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Cacheset.exe]"  Id="CachesetexeShortcut" Name="Cacheset" Description="Sysinternals Cacheset" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Dbgview.exe]"  Id="DbgviewexeShortcut" Name="Dbgview" Description="Sysinternals Dbgview" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Desktops.exe]"  Id="DesktopsexeShortcut" Name="Desktops" Description="Sysinternals Desktops" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#disk2vhd.exe]"  Id="disk2vhdexeShortcut" Name="disk2vhd" Description="Sysinternals disk2vhd" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Diskmon.exe]"  Id="DiskmonexeShortcut" Name="Diskmon" Description="Sysinternals Diskmon" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#DiskView.exe]"  Id="DiskViewexeShortcut" Name="DiskView" Description="Sysinternals DiskView" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#LoadOrd.exe]"  Id="LoadOrdexeShortcut" Name="LoadOrd" Description="Sysinternals LoadOrd" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#pagedfrg.exe]"  Id="pagedfrgexeShortcut" Name="pagedfrg" Description="Sysinternals pagedfrg" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#portmon.exe]"  Id="portmonexeShortcut" Name="portmon" Description="Sysinternals portmon" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#procexp.exe]"  Id="procexpexeShortcut" Name="procexp" Description="Sysinternals procexp" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Procmon.exe]"  Id="ProcmonexeShortcut" Name="Procmon" Description="Sysinternals Procmon" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#RAMMap.exe]"  Id="RAMMapexeShortcut" Name="RAMMap" Description="Sysinternals RAMMap" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#RootkitRevealer.exe]"  Id="RootkitRevealerexeShortcut" Name="RootkitRevealer" Description="Sysinternals RootkitRevealer" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#ShareEnum.exe]"  Id="ShareEnumexeShortcut" Name="ShareEnum" Description="Sysinternals ShareEnum" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#ShellRunas.exe]"  Id="ShellRunasexeShortcut" Name="ShellRunas" Description="Sysinternals ShellRunas" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#tcpvcon.exe]"  Id="tcpvconexeShortcut" Name="tcpvcon" Description="Sysinternals tcpvcon" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Tcpview.exe]"  Id="TcpviewexeShortcut" Name="Tcpview" Description="Sysinternals Tcpview" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#vmmap.exe]"  Id="vmmapexeShortcut" Name="vmmap" Description="Sysinternals vmmap" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#Winobj.exe]"  Id="WinobjexeShortcut" Name="Winobj" Description="Sysinternals Winobj" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#ZoomIt.exe]"  Id="ZoomItexeShortcut" Name="ZoomIt" Description="Sysinternals ZoomIt" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+        <Shortcut Target="[#ZoomIt64.exe]"  Id="ZoomIt64exeShortcut" Name="ZoomIt64" Description="Sysinternals ZoomIt64" WorkingDirectory="APPLICATIONROOTDIRECTORY" Directory="ApplicationProgramsFolder" />
+    
+      </Component>
+    </ComponentGroup>
+    
+    <InstallExecuteSequence>
+        <Custom Action="ReloadEnvironment_CMD" After="CostFinalize"/>
+        <Custom Action="ReloadEnvironment" After="InstallFinalize"/>
+    </InstallExecuteSequence>
+    
+    <!-- <Property Id="ReloadEnvironment" Value="[SystemFolder]setx.exe RESET_ENVIRONMENT_PLEASE &quot;&quot;" /> -->
+    <CustomAction Id="ReloadEnvironment_CMD" Property="QtExecCmdLine" Value="&quot;[SystemFolder]setx.exe&quot; RESET_ENVIRONMENT_PLEASE &quot;&quot;" Execute="immediate" />
+    
+    <CustomAction Id='ReloadEnvironment'  BinaryKey="WixCA" DllEntry="CAQuietExec" Execute='immediate' Return='ignore'/>
+    
+    <Property Id="ARPHELPLINK" Value="http://technet.microsoft.com/en-us/sysinternals/bb469930"></Property>
+    <Property Id="ARPURLINFOABOUT" Value="http://technet.microsoft.com/en-us/sysinternals/bb545021.aspx"></Property>
+    <Property Id="WixUI_InstallDir" Value="INSTALLDIR"></Property>
+
+    <!-- This property defines the ALLUSERS property and sets it to blank, which indicates that this     -->
+    <!-- product will be  installed per-user instead of per-machine.                                     -->
+    <Property Id="ALLUSERS" Secure="yes"/>
+
+
+    <Feature Id="Sysinternals" Title="Sysinternals Suite" Level="1" ConfigurableDirectory="INSTALLFOLDER">
+      <ComponentGroupRef Id="Sysinternals"></ComponentGroupRef>
+      <ComponentRef Id="shortcuts"></ComponentRef>
+    </Feature>
+    
+  </Product>
+</Wix>

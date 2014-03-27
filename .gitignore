@@ -4,3 +4,4 @@ obj
 *.cab
 *.pdb
 *.wixpdb
+*.wixobj
