@@ -11,94 +11,21 @@
 				<Directory Id="INSTALLFOLDER" Name="sysinternals" />
 			</Directory>
 			<Directory Id="ProgramMenuFolder">
-				<Directory Id="ApplicationProgramsFolder" Name="Sysinternals"/>
+				<Directory Id="ApplicationProgramsFolder" Name="Sysinternals">
+					<Component Id="Sysinternals" Guid="C9C3211A-A59F-4360-B853-E0B46C2CB039">
+						<RegistryValue Root='HKCU' Key='Software\[Manufacturer]\[ProductName]' Type='string' Value='' KeyPath='yes' />
+						<RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
+					</Component>
+				</Directory>
 			</Directory>
 		</Directory>
 
 		<Feature Id="ProductFeature" Title="Sysinternals" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
-			<ComponentGroupRef Id="ProductAppPaths" />
+			<ComponentRef Id="Sysinternals" />
 		</Feature>
 
 	</Product>
-
-	<!-- registry keys (app paths) -->
-	<Fragment>
-		<ComponentGroup Id="ProductAppPaths" Directory="INSTALLFOLDER">
-			<Component Guid="a9b5c8de-ecfe-4a32-9f06-32a848ecfffa" Id="AppPath_portmon.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\portmon.exe"><RegistryValue Type="string" Value="[#portmon.exe]"/></RegistryKey></Component>
-			<Component Guid="aabfacf1-c845-48fa-aee5-d42e94263c36" Id="AppPath_procdump.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\procdump.exe"><RegistryValue Type="string" Value="[#procdump.exe]"/></RegistryKey></Component>
-			<Component Guid="a07c7908-bfab-4e8d-86c4-65268240435c" Id="AppPath_procexp.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\procexp.exe"><RegistryValue Type="string" Value="[#procexp.exe]"/></RegistryKey></Component>
-			<Component Guid="a2816196-f944-4e89-bccf-95803999a4a4" Id="AppPath_Procmon.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Procmon.exe"><RegistryValue Type="string" Value="[#Procmon.exe]"/></RegistryKey></Component>
-			<Component Guid="a5b6bb3c-5b6c-4141-aa32-440b81ed6777" Id="AppPath_ctrl2cap.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ctrl2cap.exe"><RegistryValue Type="string" Value="[#ctrl2cap.exe]"/></RegistryKey></Component>
-			<Component Guid="a91960c6-1f70-4605-9cd8-9671b486632e" Id="AppPath_ADExplorer.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ADExplorer.exe"><RegistryValue Type="string" Value="[#ADExplorer.exe]"/></RegistryKey></Component>
-			<Component Guid="a0479130-998a-41cb-a000-6390f82bd9e7" Id="AppPath_ADInsight.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ADInsight.exe"><RegistryValue Type="string" Value="[#ADInsight.exe]"/></RegistryKey></Component>
-			<Component Guid="a8f250d4-1f5c-4562-ade5-d1c1fb566865" Id="AppPath_adrestore.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\adrestore.exe"><RegistryValue Type="string" Value="[#adrestore.exe]"/></RegistryKey></Component>
-			<Component Guid="a5ca2a6b-9d73-43f2-ab35-fee5955ee959" Id="AppPath_Autologon.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Autologon.exe"><RegistryValue Type="string" Value="[#Autologon.exe]"/></RegistryKey></Component>
-			<Component Guid="a2dd43ee-550b-4903-9d6a-d0b4d231ef95" Id="AppPath_autoruns.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\autoruns.exe"><RegistryValue Type="string" Value="[#autoruns.exe]"/></RegistryKey></Component>
-			<Component Guid="a35d3bdf-11d0-4818-b609-0b439451166e" Id="AppPath_autorunsc.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\autorunsc.exe"><RegistryValue Type="string" Value="[#autorunsc.exe]"/></RegistryKey></Component>
-			<Component Guid="a1b0087e-9caa-452a-997e-251fc77029f3" Id="AppPath_Bginfo.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Bginfo.exe"><RegistryValue Type="string" Value="[#Bginfo.exe]"/></RegistryKey></Component>
-			<Component Guid="a9772842-aa08-4217-919f-81f0159fb890" Id="AppPath_Cacheset.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Cacheset.exe"><RegistryValue Type="string" Value="[#Cacheset.exe]"/></RegistryKey></Component>
-			<Component Guid="a6cabe13-72da-4155-aca9-5f30d8771a63" Id="AppPath_Clockres.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Clockres.exe"><RegistryValue Type="string" Value="[#Clockres.exe]"/></RegistryKey></Component>
-			<Component Guid="ab0230c8-300b-4855-a897-287a42cdf95b" Id="AppPath_Contig.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Contig.exe"><RegistryValue Type="string" Value="[#Contig.exe]"/></RegistryKey></Component>
-			<Component Guid="a6fd55c0-d686-4f66-9550-a43d661a33d0" Id="AppPath_Coreinfo.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Coreinfo.exe"><RegistryValue Type="string" Value="[#Coreinfo.exe]"/></RegistryKey></Component>
-			<Component Guid="a41699e3-3f26-41cf-81fd-ab7c2317800d" Id="AppPath_Dbgview.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Dbgview.exe"><RegistryValue Type="string" Value="[#Dbgview.exe]"/></RegistryKey></Component>
-			<Component Guid="a6e1a704-9b2e-4630-a02f-ef9311728bf1" Id="AppPath_Desktops.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Desktops.exe"><RegistryValue Type="string" Value="[#Desktops.exe]"/></RegistryKey></Component>
-			<Component Guid="a3a083d4-2fdf-4ce6-b32c-b4fb787c45ee" Id="AppPath_disk2vhd.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\disk2vhd.exe"><RegistryValue Type="string" Value="[#disk2vhd.exe]"/></RegistryKey></Component>
-			<Component Guid="aa9c459f-821b-4fbd-8ee6-b404de7ba23c" Id="AppPath_diskext.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\diskext.exe"><RegistryValue Type="string" Value="[#diskext.exe]"/></RegistryKey></Component>
-			<Component Guid="a48570c0-28a9-4bce-b047-ff9d8a79599e" Id="AppPath_Diskmon.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Diskmon.exe"><RegistryValue Type="string" Value="[#Diskmon.exe]"/></RegistryKey></Component>
-			<Component Guid="a4530814-3e4d-4a00-ba02-f3f46fff687e" Id="AppPath_DiskView.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\DiskView.exe"><RegistryValue Type="string" Value="[#DiskView.exe]"/></RegistryKey></Component>
-			<Component Guid="a3050378-9e3d-4db2-a3d1-556072344ca6" Id="AppPath_du.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\du.exe"><RegistryValue Type="string" Value="[#du.exe]"/></RegistryKey></Component>
-			<Component Guid="abb76d5c-1e41-434e-99ac-b08705b67a2c" Id="AppPath_efsdump.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\efsdump.exe"><RegistryValue Type="string" Value="[#efsdump.exe]"/></RegistryKey></Component>
-			<Component Guid="a6bca915-ead9-4503-a1d9-7772334fafbf" Id="AppPath_FindLinks.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\FindLinks.exe"><RegistryValue Type="string" Value="[#FindLinks.exe]"/></RegistryKey></Component>
-			<Component Guid="ae76cb4b-fac6-4fc3-b3e0-f46221084be9" Id="AppPath_handle.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\handle.exe"><RegistryValue Type="string" Value="[#handle.exe]"/></RegistryKey></Component>
-			<Component Guid="a4a964cf-ce31-4d70-aabb-f758057ea3ae" Id="AppPath_hex2dec.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\hex2dec.exe"><RegistryValue Type="string" Value="[#hex2dec.exe]"/></RegistryKey></Component>
-			<Component Guid="a7763af4-7a23-4ce0-812b-0af6f7b42117" Id="AppPath_junction.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\junction.exe"><RegistryValue Type="string" Value="[#junction.exe]"/></RegistryKey></Component>
-			<Component Guid="a21c56d9-8c0b-43b4-8851-7faaa48048f3" Id="AppPath_ldmdump.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ldmdump.exe"><RegistryValue Type="string" Value="[#ldmdump.exe]"/></RegistryKey></Component>
-			<Component Guid="a72d22d5-c700-4f4f-b2fb-3f706adcb23a" Id="AppPath_Listdlls.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Listdlls.exe"><RegistryValue Type="string" Value="[#Listdlls.exe]"/></RegistryKey></Component>
-			<Component Guid="ae31dde0-0e08-460f-b178-940cb1df03f6" Id="AppPath_livekd.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\livekd.exe"><RegistryValue Type="string" Value="[#livekd.exe]"/></RegistryKey></Component>
-			<Component Guid="a7b5d23d-55dd-43e8-a28b-989099185876" Id="AppPath_LoadOrd.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\LoadOrd.exe"><RegistryValue Type="string" Value="[#LoadOrd.exe]"/></RegistryKey></Component>
-			<Component Guid="a3503aad-3781-43fe-b5b3-31e82cc1d1e0" Id="AppPath_logonsessions.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\logonsessions.exe"><RegistryValue Type="string" Value="[#logonsessions.exe]"/></RegistryKey></Component>
-			<Component Guid="aeef6c50-b9b5-46fe-a6d4-584a4debbd51" Id="AppPath_movefile.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\movefile.exe"><RegistryValue Type="string" Value="[#movefile.exe]"/></RegistryKey></Component>
-			<Component Guid="a2768439-3861-4fcf-81b0-2b58a4c1a59b" Id="AppPath_ntfsinfo.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ntfsinfo.exe"><RegistryValue Type="string" Value="[#ntfsinfo.exe]"/></RegistryKey></Component>
-			<Component Guid="ac7c8a11-88c8-4075-98db-18cab09f86d5" Id="AppPath_pagedfrg.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pagedfrg.exe"><RegistryValue Type="string" Value="[#pagedfrg.exe]"/></RegistryKey></Component>
-			<Component Guid="acb327ed-d879-439d-994a-79507aaeb4b2" Id="AppPath_pendmoves.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pendmoves.exe"><RegistryValue Type="string" Value="[#pendmoves.exe]"/></RegistryKey></Component>
-			<Component Guid="ac96ed82-6419-4bf1-acad-60ebee4ebb51" Id="AppPath_pipelist.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pipelist.exe"><RegistryValue Type="string" Value="[#pipelist.exe]"/></RegistryKey></Component>
-			<Component Guid="a6dbfa12-9393-478b-88ba-1bb67543aa9e" Id="AppPath_PsExec.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\PsExec.exe"><RegistryValue Type="string" Value="[#PsExec.exe]"/></RegistryKey></Component>
-			<Component Guid="af412295-811a-4cb1-b31e-67ed5012d1ee" Id="AppPath_psfile.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\psfile.exe"><RegistryValue Type="string" Value="[#psfile.exe]"/></RegistryKey></Component>
-			<Component Guid="abccaed5-ca9a-45d6-b48a-5b425bf60d97" Id="AppPath_PsGetsid.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\PsGetsid.exe"><RegistryValue Type="string" Value="[#PsGetsid.exe]"/></RegistryKey></Component>
-			<Component Guid="a819ddbe-90b8-47d9-aa80-d4936fe4135f" Id="AppPath_PsInfo.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\PsInfo.exe"><RegistryValue Type="string" Value="[#PsInfo.exe]"/></RegistryKey></Component>
-			<Component Guid="ac242fdc-057e-4958-a172-81f48b29162e" Id="AppPath_pskill.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pskill.exe"><RegistryValue Type="string" Value="[#pskill.exe]"/></RegistryKey></Component>
-			<Component Guid="ae9aa665-8671-4190-b4b4-8e8f02cf9137" Id="AppPath_pslist.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pslist.exe"><RegistryValue Type="string" Value="[#pslist.exe]"/></RegistryKey></Component>
-			<Component Guid="a4be0499-29cb-4d79-ba45-fb894e92cfc3" Id="AppPath_PsLoggedon.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\PsLoggedon.exe"><RegistryValue Type="string" Value="[#PsLoggedon.exe]"/></RegistryKey></Component>
-			<Component Guid="a3b14f35-1611-42f1-b9b1-e0055129bdc5" Id="AppPath_psloglist.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\psloglist.exe"><RegistryValue Type="string" Value="[#psloglist.exe]"/></RegistryKey></Component>
-			<Component Guid="afadd2e9-5947-49db-ae26-d1be1df8074c" Id="AppPath_pspasswd.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pspasswd.exe"><RegistryValue Type="string" Value="[#pspasswd.exe]"/></RegistryKey></Component>
-			<Component Guid="a971c36c-16db-4266-add0-248d727b5dc7" Id="AppPath_psping.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\psping.exe"><RegistryValue Type="string" Value="[#psping.exe]"/></RegistryKey></Component>
-			<Component Guid="a28fec23-614d-49e2-88a4-39353fb109b5" Id="AppPath_PsService.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\PsService.exe"><RegistryValue Type="string" Value="[#PsService.exe]"/></RegistryKey></Component>
-			<Component Guid="abac04e1-f172-49df-819a-61f6393dce62" Id="AppPath_psshutdown.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\psshutdown.exe"><RegistryValue Type="string" Value="[#psshutdown.exe]"/></RegistryKey></Component>
-			<Component Guid="a7716064-b8b9-4b74-a369-3ad6852f895b" Id="AppPath_pssuspend.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pssuspend.exe"><RegistryValue Type="string" Value="[#pssuspend.exe]"/></RegistryKey></Component>
-			<Component Guid="a20a2be3-d895-48c2-bc07-82c5393d1e45" Id="AppPath_RAMMap.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\RAMMap.exe"><RegistryValue Type="string" Value="[#RAMMap.exe]"/></RegistryKey></Component>
-			<Component Guid="aa293aca-09fb-4f9e-8a04-a2b18a860052" Id="AppPath_RegDelNull.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\RegDelNull.exe"><RegistryValue Type="string" Value="[#RegDelNull.exe]"/></RegistryKey></Component>
-			<Component Guid="a392ff78-a9df-40db-91b7-3037bb09adc0" Id="AppPath_regjump.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\regjump.exe"><RegistryValue Type="string" Value="[#regjump.exe]"/></RegistryKey></Component>
-			<Component Guid="aae84232-1338-4b39-8ba9-de66abc23f95" Id="AppPath_RootkitRevealer.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\RootkitRevealer.exe"><RegistryValue Type="string" Value="[#RootkitRevealer.exe]"/></RegistryKey></Component>
-			<Component Guid="a78ba35e-7a3a-47c5-86a2-5ff6a09692e6" Id="AppPath_ru.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ru.exe"><RegistryValue Type="string" Value="[#ru.exe]"/></RegistryKey></Component>
-			<Component Guid="a1112c36-1177-4c2d-879f-ff3091f1ce3f" Id="AppPath_sdelete.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\sdelete.exe"><RegistryValue Type="string" Value="[#sdelete.exe]"/></RegistryKey></Component>
-			<Component Guid="ad63caeb-c60e-4ecf-92c5-8969f031083b" Id="AppPath_ShareEnum.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ShareEnum.exe"><RegistryValue Type="string" Value="[#ShareEnum.exe]"/></RegistryKey></Component>
-			<Component Guid="a486a386-5204-4109-baaf-d9aba5305aa7" Id="AppPath_ShellRunas.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ShellRunas.exe"><RegistryValue Type="string" Value="[#ShellRunas.exe]"/></RegistryKey></Component>
-			<Component Guid="ae576d4c-79d6-4105-b084-d7fa0364ac9c" Id="AppPath_sigcheck.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\sigcheck.exe"><RegistryValue Type="string" Value="[#sigcheck.exe]"/></RegistryKey></Component>
-			<Component Guid="a9ec6c73-f94c-4a0c-92c7-6d91105191d0" Id="AppPath_streams.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\streams.exe"><RegistryValue Type="string" Value="[#streams.exe]"/></RegistryKey></Component>
-			<Component Guid="ac344c1e-8942-4dd5-a26d-88e503d20d20" Id="AppPath_strings.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\strings.exe"><RegistryValue Type="string" Value="[#strings.exe]"/></RegistryKey></Component>
-			<Component Guid="a0cefdcd-dbda-4495-b6fb-f220f40b3ccc" Id="AppPath_sync.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\sync.exe"><RegistryValue Type="string" Value="[#sync.exe]"/></RegistryKey></Component>
-			<Component Guid="ae5b25e6-8874-4712-9a83-32ba7a8b3fe7" Id="AppPath_Tcpvcon.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Tcpvcon.exe"><RegistryValue Type="string" Value="[#Tcpvcon.exe]"/></RegistryKey></Component>
-			<Component Guid="af4b135d-eba7-4171-8992-02c0e74501f6" Id="AppPath_Tcpview.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Tcpview.exe"><RegistryValue Type="string" Value="[#Tcpview.exe]"/></RegistryKey></Component>
-			<Component Guid="a7012317-516a-4d26-b301-7c20155d7181" Id="AppPath_vmmap.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\vmmap.exe"><RegistryValue Type="string" Value="[#vmmap.exe]"/></RegistryKey></Component>
-			<Component Guid="ac773346-56d6-40a4-89c3-23d20ccbb278" Id="AppPath_Volumeid.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Volumeid.exe"><RegistryValue Type="string" Value="[#Volumeid.exe]"/></RegistryKey></Component>
-			<Component Guid="abac3fb1-2dc7-4c9d-aa09-bc56768444b1" Id="AppPath_whois.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\whois.exe"><RegistryValue Type="string" Value="[#whois.exe]"/></RegistryKey></Component>
-			<Component Guid="aedaa4e5-c890-4435-a6ca-0a5a5cacf024" Id="AppPath_Winobj.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Winobj.exe"><RegistryValue Type="string" Value="[#Winobj.exe]"/></RegistryKey></Component>
-			<Component Guid="af0ecdff-ec77-434f-9a76-92cac294d7a2" Id="AppPath_ZoomIt.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ZoomIt.exe"><RegistryValue Type="string" Value="[#ZoomIt.exe]"/></RegistryKey></Component>
-			<Component Guid="a9fd11bb-aced-4bd6-b5f7-473568a09399" Id="AppPath_accesschk.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\accesschk.exe"><RegistryValue Type="string" Value="[#accesschk.exe]"/></RegistryKey></Component>
-			<Component Guid="a7c1d66c-15d4-4381-99b9-5633af8ca234" Id="AppPath_AccessEnum.exe"><RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\AccessEnum.exe"><RegistryValue Type="string" Value="[#AccessEnum.exe]"/></RegistryKey></Component>
-		</ComponentGroup>
-	</Fragment>
 
 	<!-- files to install -->
 	<Fragment>
@@ -128,292 +55,508 @@
 			<Component Guid="baa22f4c-417c-4eea-8a0f-8d6f577fb9ad" Id="WINOBJ.HLP"><File Name="WINOBJ.HLP" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="b1e60984-26d6-4153-87e0-2a591f645365" Id="AdExplorer.chm"><File Name="AdExplorer.chm" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="b2816196-f944-4e89-bccf-95803999a4a4" Id="Procmon.exe">
-				<File Name="Procmon.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Procmon" Name="Procmon" Description="Procmon" Target="[#Procmon.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Procmon.exe" />
+				<Shortcut Id="Shortcut_Procmon" Name="Procmon" Description="Procmon" Target="[#Procmon.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Procmon.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Procmon.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b9b5c8de-ecfe-4a32-9f06-32a848ecfffa" Id="portmon.exe">
-				<File Name="portmon.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_portmon" Name="portmon" Description="portmon" Target="[#portmon.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="portmon.exe" />
+				<Shortcut Id="Shortcut_portmon" Name="portmon" Description="portmon" Target="[#portmon.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\portmon.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#portmon.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="babfacf1-c845-48fa-aee5-d42e94263c36" Id="procdump.exe">
-				<File Name="procdump.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_procdump" Name="procdump" Description="procdump" Target="[#procdump.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="procdump.exe" />
+				<Shortcut Id="Shortcut_procdump" Name="procdump" Description="procdump" Target="[#procdump.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\procdump.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#procdump.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b07c7908-bfab-4e8d-86c4-65268240435c" Id="procexp.exe">
-				<File Name="procexp.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_procexp" Name="procexp" Description="procexp" Target="[#procexp.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="procexp.exe" />
+				<Shortcut Id="Shortcut_procexp" Name="procexp" Description="procexp" Target="[#procexp.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\procexp.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#procexp.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b5b6bb3c-5b6c-4141-aa32-440b81ed6777" Id="ctrl2cap.exe">
-				<File Name="ctrl2cap.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_ctrl2cap" Name="ctrl2cap" Description="ctrl2cap" Target="[#ctrl2cap.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="ctrl2cap.exe" />
+				<Shortcut Id="Shortcut_ctrl2cap" Name="ctrl2cap" Description="ctrl2cap" Target="[#ctrl2cap.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ctrl2cap.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#ctrl2cap.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b91960c6-1f70-4605-9cd8-9671b486632e" Id="ADExplorer.exe">
-				<File Name="ADExplorer.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_ADExplorer" Name="ADExplorer" Description="ADExplorer" Target="[#ADExplorer.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="ADExplorer.exe" />
+				<Shortcut Id="Shortcut_ADExplorer" Name="ADExplorer" Description="ADExplorer" Target="[#ADExplorer.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ADExplorer.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#ADExplorer.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b0479130-998a-41cb-a000-6390f82bd9e7" Id="ADInsight.exe">
-				<File Name="ADInsight.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_ADInsight" Name="ADInsight" Description="ADInsight" Target="[#ADInsight.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="ADInsight.exe" />
+				<Shortcut Id="Shortcut_ADInsight" Name="ADInsight" Description="ADInsight" Target="[#ADInsight.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ADInsight.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#ADInsight.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b8f250d4-1f5c-4562-ade5-d1c1fb566865" Id="adrestore.exe">
-				<File Name="adrestore.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_adrestore" Name="adrestore" Description="adrestore" Target="[#adrestore.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="adrestore.exe" />
+				<Shortcut Id="Shortcut_adrestore" Name="adrestore" Description="adrestore" Target="[#adrestore.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\adrestore.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#adrestore.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b5ca2a6b-9d73-43f2-ab35-fee5955ee959" Id="Autologon.exe">
-				<File Name="Autologon.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Autologon" Name="Autologon" Description="Autologon" Target="[#Autologon.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Autologon.exe" />
+				<Shortcut Id="Shortcut_Autologon" Name="Autologon" Description="Autologon" Target="[#Autologon.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Autologon.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Autologon.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b2dd43ee-550b-4903-9d6a-d0b4d231ef95" Id="autoruns.exe">
-				<File Name="autoruns.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_autoruns" Name="autoruns" Description="autoruns" Target="[#autoruns.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="autoruns.exe" />
+				<Shortcut Id="Shortcut_autoruns" Name="autoruns" Description="autoruns" Target="[#autoruns.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\autoruns.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#autoruns.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b35d3bdf-11d0-4818-b609-0b439451166e" Id="autorunsc.exe">
-				<File Name="autorunsc.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_autorunsc" Name="autorunsc" Description="autorunsc" Target="[#autorunsc.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="autorunsc.exe" />
+				<Shortcut Id="Shortcut_autorunsc" Name="autorunsc" Description="autorunsc" Target="[#autorunsc.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\autorunsc.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#autorunsc.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b1b0087e-9caa-452a-997e-251fc77029f3" Id="Bginfo.exe">
-				<File Name="Bginfo.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Bginfo" Name="Bginfo" Description="Bginfo" Target="[#Bginfo.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Bginfo.exe" />
+				<Shortcut Id="Shortcut_Bginfo" Name="Bginfo" Description="Bginfo" Target="[#Bginfo.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Bginfo.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Bginfo.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b9772842-aa08-4217-919f-81f0159fb890" Id="Cacheset.exe">
-				<File Name="Cacheset.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Cacheset" Name="Cacheset" Description="Cacheset" Target="[#Cacheset.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Cacheset.exe" />
+				<Shortcut Id="Shortcut_Cacheset" Name="Cacheset" Description="Cacheset" Target="[#Cacheset.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Cacheset.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Cacheset.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b6cabe13-72da-4155-aca9-5f30d8771a63" Id="Clockres.exe">
-				<File Name="Clockres.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Clockres" Name="Clockres" Description="Clockres" Target="[#Clockres.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Clockres.exe" />
+				<Shortcut Id="Shortcut_Clockres" Name="Clockres" Description="Clockres" Target="[#Clockres.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Clockres.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Clockres.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bb0230c8-300b-4855-a897-287a42cdf95b" Id="Contig.exe">
-				<File Name="Contig.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Contig" Name="Contig" Description="Contig" Target="[#Contig.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Contig.exe" />
+				<Shortcut Id="Shortcut_Contig" Name="Contig" Description="Contig" Target="[#Contig.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Contig.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Contig.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b6fd55c0-d686-4f66-9550-a43d661a33d0" Id="Coreinfo.exe">
-				<File Name="Coreinfo.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Coreinfo" Name="Coreinfo" Description="Coreinfo" Target="[#Coreinfo.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Coreinfo.exe" />
+				<Shortcut Id="Shortcut_Coreinfo" Name="Coreinfo" Description="Coreinfo" Target="[#Coreinfo.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Coreinfo.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Coreinfo.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b41699e3-3f26-41cf-81fd-ab7c2317800d" Id="Dbgview.exe">
-				<File Name="Dbgview.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Dbgview" Name="Dbgview" Description="Dbgview" Target="[#Dbgview.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Dbgview.exe" />
+				<Shortcut Id="Shortcut_Dbgview" Name="Dbgview" Description="Dbgview" Target="[#Dbgview.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Dbgview.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Dbgview.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b6e1a704-9b2e-4630-a02f-ef9311728bf1" Id="Desktops.exe">
-				<File Name="Desktops.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Desktops" Name="Desktops" Description="Desktops" Target="[#Desktops.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Desktops.exe" />
+				<Shortcut Id="Shortcut_Desktops" Name="Desktops" Description="Desktops" Target="[#Desktops.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Desktops.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Desktops.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b3a083d4-2fdf-4ce6-b32c-b4fb787c45ee" Id="disk2vhd.exe">
-				<File Name="disk2vhd.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_disk2vhd" Name="disk2vhd" Description="disk2vhd" Target="[#disk2vhd.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="disk2vhd.exe" />
+				<Shortcut Id="Shortcut_disk2vhd" Name="disk2vhd" Description="disk2vhd" Target="[#disk2vhd.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\disk2vhd.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#disk2vhd.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="ba9c459f-821b-4fbd-8ee6-b404de7ba23c" Id="diskext.exe">
-				<File Name="diskext.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_diskext" Name="diskext" Description="diskext" Target="[#diskext.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="diskext.exe" />
+				<Shortcut Id="Shortcut_diskext" Name="diskext" Description="diskext" Target="[#diskext.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\diskext.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#diskext.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b48570c0-28a9-4bce-b047-ff9d8a79599e" Id="Diskmon.exe">
-				<File Name="Diskmon.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Diskmon" Name="Diskmon" Description="Diskmon" Target="[#Diskmon.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Diskmon.exe" />
+				<Shortcut Id="Shortcut_Diskmon" Name="Diskmon" Description="Diskmon" Target="[#Diskmon.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Diskmon.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Diskmon.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b4530814-3e4d-4a00-ba02-f3f46fff687e" Id="DiskView.exe">
-				<File Name="DiskView.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_DiskView" Name="DiskView" Description="DiskView" Target="[#DiskView.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="DiskView.exe" />
+				<Shortcut Id="Shortcut_DiskView" Name="DiskView" Description="DiskView" Target="[#DiskView.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\DiskView.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#DiskView.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b3050378-9e3d-4db2-a3d1-556072344ca6" Id="du.exe">
-				<File Name="du.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_du" Name="du" Description="du" Target="[#du.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="du.exe" />
+				<Shortcut Id="Shortcut_du" Name="du" Description="du" Target="[#du.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\du.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#du.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bbb76d5c-1e41-434e-99ac-b08705b67a2c" Id="efsdump.exe">
-				<File Name="efsdump.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_efsdump" Name="efsdump" Description="efsdump" Target="[#efsdump.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="efsdump.exe" />
+				<Shortcut Id="Shortcut_efsdump" Name="efsdump" Description="efsdump" Target="[#efsdump.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\efsdump.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#efsdump.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b6bca915-ead9-4503-a1d9-7772334fafbf" Id="FindLinks.exe">
-				<File Name="FindLinks.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_FindLinks" Name="FindLinks" Description="FindLinks" Target="[#FindLinks.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="FindLinks.exe" />
+				<Shortcut Id="Shortcut_FindLinks" Name="FindLinks" Description="FindLinks" Target="[#FindLinks.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\FindLinks.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#FindLinks.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="be76cb4b-fac6-4fc3-b3e0-f46221084be9" Id="handle.exe">
-				<File Name="handle.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_handle" Name="handle" Description="handle" Target="[#handle.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="handle.exe" />
+				<Shortcut Id="Shortcut_handle" Name="handle" Description="handle" Target="[#handle.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\handle.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#handle.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b4a964cf-ce31-4d70-aabb-f758057ea3ae" Id="hex2dec.exe">
-				<File Name="hex2dec.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_hex2dec" Name="hex2dec" Description="hex2dec" Target="[#hex2dec.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="hex2dec.exe" />
+				<Shortcut Id="Shortcut_hex2dec" Name="hex2dec" Description="hex2dec" Target="[#hex2dec.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\hex2dec.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#hex2dec.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b7763af4-7a23-4ce0-812b-0af6f7b42117" Id="junction.exe">
-				<File Name="junction.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_junction" Name="junction" Description="junction" Target="[#junction.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="junction.exe" />
+				<Shortcut Id="Shortcut_junction" Name="junction" Description="junction" Target="[#junction.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\junction.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#junction.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b21c56d9-8c0b-43b4-8851-7faaa48048f3" Id="ldmdump.exe">
-				<File Name="ldmdump.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_ldmdump" Name="ldmdump" Description="ldmdump" Target="[#ldmdump.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="ldmdump.exe" />
+				<Shortcut Id="Shortcut_ldmdump" Name="ldmdump" Description="ldmdump" Target="[#ldmdump.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ldmdump.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#ldmdump.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b72d22d5-c700-4f4f-b2fb-3f706adcb23a" Id="Listdlls.exe">
-				<File Name="Listdlls.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Listdlls" Name="Listdlls" Description="Listdlls" Target="[#Listdlls.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Listdlls.exe" />
+				<Shortcut Id="Shortcut_Listdlls" Name="Listdlls" Description="Listdlls" Target="[#Listdlls.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Listdlls.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Listdlls.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="be31dde0-0e08-460f-b178-940cb1df03f6" Id="livekd.exe">
-				<File Name="livekd.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_livekd" Name="livekd" Description="livekd" Target="[#livekd.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="livekd.exe" />
+				<Shortcut Id="Shortcut_livekd" Name="livekd" Description="livekd" Target="[#livekd.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\livekd.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#livekd.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b7b5d23d-55dd-43e8-a28b-989099185876" Id="LoadOrd.exe">
-				<File Name="LoadOrd.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_LoadOrd" Name="LoadOrd" Description="LoadOrd" Target="[#LoadOrd.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="LoadOrd.exe" />
+				<Shortcut Id="Shortcut_LoadOrd" Name="LoadOrd" Description="LoadOrd" Target="[#LoadOrd.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\LoadOrd.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#LoadOrd.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b3503aad-3781-43fe-b5b3-31e82cc1d1e0" Id="logonsessions.exe">
-				<File Name="logonsessions.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_logonsessions" Name="logonsessions" Description="logonsessions" Target="[#logonsessions.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="logonsessions.exe" />
+				<Shortcut Id="Shortcut_logonsessions" Name="logonsessions" Description="logonsessions" Target="[#logonsessions.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\logonsessions.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#logonsessions.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="beef6c50-b9b5-46fe-a6d4-584a4debbd51" Id="movefile.exe">
-				<File Name="movefile.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_movefile" Name="movefile" Description="movefile" Target="[#movefile.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="movefile.exe" />
+				<Shortcut Id="Shortcut_movefile" Name="movefile" Description="movefile" Target="[#movefile.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\movefile.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#movefile.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b2768439-3861-4fcf-81b0-2b58a4c1a59b" Id="ntfsinfo.exe">
-				<File Name="ntfsinfo.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_ntfsinfo" Name="ntfsinfo" Description="ntfsinfo" Target="[#ntfsinfo.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="ntfsinfo.exe" />
+				<Shortcut Id="Shortcut_ntfsinfo" Name="ntfsinfo" Description="ntfsinfo" Target="[#ntfsinfo.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ntfsinfo.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#ntfsinfo.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bc7c8a11-88c8-4075-98db-18cab09f86d5" Id="pagedfrg.exe">
-				<File Name="pagedfrg.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_pagedfrg" Name="pagedfrg" Description="pagedfrg" Target="[#pagedfrg.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="pagedfrg.exe" />
+				<Shortcut Id="Shortcut_pagedfrg" Name="pagedfrg" Description="pagedfrg" Target="[#pagedfrg.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pagedfrg.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#pagedfrg.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bcb327ed-d879-439d-994a-79507aaeb4b2" Id="pendmoves.exe">
-				<File Name="pendmoves.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_pendmoves" Name="pendmoves" Description="pendmoves" Target="[#pendmoves.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="pendmoves.exe" />
+				<Shortcut Id="Shortcut_pendmoves" Name="pendmoves" Description="pendmoves" Target="[#pendmoves.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pendmoves.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#pendmoves.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bc96ed82-6419-4bf1-acad-60ebee4ebb51" Id="pipelist.exe">
-				<File Name="pipelist.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_pipelist" Name="pipelist" Description="pipelist" Target="[#pipelist.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="pipelist.exe" />
+				<Shortcut Id="Shortcut_pipelist" Name="pipelist" Description="pipelist" Target="[#pipelist.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pipelist.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#pipelist.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b6dbfa12-9393-478b-88ba-1bb67543aa9e" Id="PsExec.exe">
-				<File Name="PsExec.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_PsExec" Name="PsExec" Description="PsExec" Target="[#PsExec.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="PsExec.exe" />
+				<Shortcut Id="Shortcut_PsExec" Name="PsExec" Description="PsExec" Target="[#PsExec.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\PsExec.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#PsExec.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bf412295-811a-4cb1-b31e-67ed5012d1ee" Id="psfile.exe">
-				<File Name="psfile.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_psfile" Name="psfile" Description="psfile" Target="[#psfile.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="psfile.exe" />
+				<Shortcut Id="Shortcut_psfile" Name="psfile" Description="psfile" Target="[#psfile.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\psfile.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#psfile.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bbccaed5-ca9a-45d6-b48a-5b425bf60d97" Id="PsGetsid.exe">
-				<File Name="PsGetsid.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_PsGetsid" Name="PsGetsid" Description="PsGetsid" Target="[#PsGetsid.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="PsGetsid.exe" />
+				<Shortcut Id="Shortcut_PsGetsid" Name="PsGetsid" Description="PsGetsid" Target="[#PsGetsid.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\PsGetsid.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#PsGetsid.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b819ddbe-90b8-47d9-aa80-d4936fe4135f" Id="PsInfo.exe">
-				<File Name="PsInfo.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_PsInfo" Name="PsInfo" Description="PsInfo" Target="[#PsInfo.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="PsInfo.exe" />
+				<Shortcut Id="Shortcut_PsInfo" Name="PsInfo" Description="PsInfo" Target="[#PsInfo.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\PsInfo.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#PsInfo.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bc242fdc-057e-4958-a172-81f48b29162e" Id="pskill.exe">
-				<File Name="pskill.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_pskill" Name="pskill" Description="pskill" Target="[#pskill.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="pskill.exe" />
+				<Shortcut Id="Shortcut_pskill" Name="pskill" Description="pskill" Target="[#pskill.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pskill.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#pskill.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="be9aa665-8671-4190-b4b4-8e8f02cf9137" Id="pslist.exe">
-				<File Name="pslist.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_pslist" Name="pslist" Description="pslist" Target="[#pslist.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="pslist.exe" />
+				<Shortcut Id="Shortcut_pslist" Name="pslist" Description="pslist" Target="[#pslist.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pslist.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#pslist.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b4be0499-29cb-4d79-ba45-fb894e92cfc3" Id="PsLoggedon.exe">
-				<File Name="PsLoggedon.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_PsLoggedon" Name="PsLoggedon" Description="PsLoggedon" Target="[#PsLoggedon.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="PsLoggedon.exe" />
+				<Shortcut Id="Shortcut_PsLoggedon" Name="PsLoggedon" Description="PsLoggedon" Target="[#PsLoggedon.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\PsLoggedon.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#PsLoggedon.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b3b14f35-1611-42f1-b9b1-e0055129bdc5" Id="psloglist.exe">
-				<File Name="psloglist.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_psloglist" Name="psloglist" Description="psloglist" Target="[#psloglist.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="psloglist.exe" />
+				<Shortcut Id="Shortcut_psloglist" Name="psloglist" Description="psloglist" Target="[#psloglist.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\psloglist.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#psloglist.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bfadd2e9-5947-49db-ae26-d1be1df8074c" Id="pspasswd.exe">
-				<File Name="pspasswd.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_pspasswd" Name="pspasswd" Description="pspasswd" Target="[#pspasswd.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="pspasswd.exe" />
+				<Shortcut Id="Shortcut_pspasswd" Name="pspasswd" Description="pspasswd" Target="[#pspasswd.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pspasswd.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#pspasswd.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b971c36c-16db-4266-add0-248d727b5dc7" Id="psping.exe">
-				<File Name="psping.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_psping" Name="psping" Description="psping" Target="[#psping.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="psping.exe" />
+				<Shortcut Id="Shortcut_psping" Name="psping" Description="psping" Target="[#psping.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\psping.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#psping.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b28fec23-614d-49e2-88a4-39353fb109b5" Id="PsService.exe">
-				<File Name="PsService.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_PsService" Name="PsService" Description="PsService" Target="[#PsService.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="PsService.exe" />
+				<Shortcut Id="Shortcut_PsService" Name="PsService" Description="PsService" Target="[#PsService.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\PsService.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#PsService.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bbac04e1-f172-49df-819a-61f6393dce62" Id="psshutdown.exe">
-				<File Name="psshutdown.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_psshutdown" Name="psshutdown" Description="psshutdown" Target="[#psshutdown.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="psshutdown.exe" />
+				<Shortcut Id="Shortcut_psshutdown" Name="psshutdown" Description="psshutdown" Target="[#psshutdown.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\psshutdown.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#psshutdown.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b7716064-b8b9-4b74-a369-3ad6852f895b" Id="pssuspend.exe">
-				<File Name="pssuspend.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_pssuspend" Name="pssuspend" Description="pssuspend" Target="[#pssuspend.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="pssuspend.exe" />
+				<Shortcut Id="Shortcut_pssuspend" Name="pssuspend" Description="pssuspend" Target="[#pssuspend.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\pssuspend.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#pssuspend.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b20a2be3-d895-48c2-bc07-82c5393d1e45" Id="RAMMap.exe">
-				<File Name="RAMMap.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_RAMMap" Name="RAMMap" Description="RAMMap" Target="[#RAMMap.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="RAMMap.exe" />
+				<Shortcut Id="Shortcut_RAMMap" Name="RAMMap" Description="RAMMap" Target="[#RAMMap.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\RAMMap.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#RAMMap.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="ba293aca-09fb-4f9e-8a04-a2b18a860052" Id="RegDelNull.exe">
-				<File Name="RegDelNull.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_RegDelNull" Name="RegDelNull" Description="RegDelNull" Target="[#RegDelNull.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="RegDelNull.exe" />
+				<Shortcut Id="Shortcut_RegDelNull" Name="RegDelNull" Description="RegDelNull" Target="[#RegDelNull.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\RegDelNull.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#RegDelNull.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b392ff78-a9df-40db-91b7-3037bb09adc0" Id="regjump.exe">
-				<File Name="regjump.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_regjump" Name="regjump" Description="regjump" Target="[#regjump.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="regjump.exe" />
+				<Shortcut Id="Shortcut_regjump" Name="regjump" Description="regjump" Target="[#regjump.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\regjump.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#regjump.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bae84232-1338-4b39-8ba9-de66abc23f95" Id="RootkitRevealer.exe">
-				<File Name="RootkitRevealer.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_RootkitRevealer" Name="RootkitRevealer" Description="RootkitRevealer" Target="[#RootkitRevealer.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="RootkitRevealer.exe" />
+				<Shortcut Id="Shortcut_RootkitRevealer" Name="RootkitRevealer" Description="RootkitRevealer" Target="[#RootkitRevealer.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\RootkitRevealer.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#RootkitRevealer.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b78ba35e-7a3a-47c5-86a2-5ff6a09692e6" Id="ru.exe">
-				<File Name="ru.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_ru" Name="ru" Description="ru" Target="[#ru.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="ru.exe" />
+				<Shortcut Id="Shortcut_ru" Name="ru" Description="ru" Target="[#ru.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ru.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#ru.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b1112c36-1177-4c2d-879f-ff3091f1ce3f" Id="sdelete.exe">
-				<File Name="sdelete.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_sdelete" Name="sdelete" Description="sdelete" Target="[#sdelete.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="sdelete.exe" />
+				<Shortcut Id="Shortcut_sdelete" Name="sdelete" Description="sdelete" Target="[#sdelete.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\sdelete.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#sdelete.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bd63caeb-c60e-4ecf-92c5-8969f031083b" Id="ShareEnum.exe">
-				<File Name="ShareEnum.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_ShareEnum" Name="ShareEnum" Description="ShareEnum" Target="[#ShareEnum.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="ShareEnum.exe" />
+				<Shortcut Id="Shortcut_ShareEnum" Name="ShareEnum" Description="ShareEnum" Target="[#ShareEnum.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ShareEnum.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#ShareEnum.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b486a386-5204-4109-baaf-d9aba5305aa7" Id="ShellRunas.exe">
-				<File Name="ShellRunas.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_ShellRunas" Name="ShellRunas" Description="ShellRunas" Target="[#ShellRunas.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="ShellRunas.exe" />
+				<Shortcut Id="Shortcut_ShellRunas" Name="ShellRunas" Description="ShellRunas" Target="[#ShellRunas.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ShellRunas.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#ShellRunas.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="be576d4c-79d6-4105-b084-d7fa0364ac9c" Id="sigcheck.exe">
-				<File Name="sigcheck.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_sigcheck" Name="sigcheck" Description="sigcheck" Target="[#sigcheck.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="sigcheck.exe" />
+				<Shortcut Id="Shortcut_sigcheck" Name="sigcheck" Description="sigcheck" Target="[#sigcheck.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\sigcheck.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#sigcheck.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b9ec6c73-f94c-4a0c-92c7-6d91105191d0" Id="streams.exe">
-				<File Name="streams.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_streams" Name="streams" Description="streams" Target="[#streams.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="streams.exe" />
+				<Shortcut Id="Shortcut_streams" Name="streams" Description="streams" Target="[#streams.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\streams.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#streams.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bc344c1e-8942-4dd5-a26d-88e503d20d20" Id="strings.exe">
-				<File Name="strings.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_strings" Name="strings" Description="strings" Target="[#strings.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="strings.exe" />
+				<Shortcut Id="Shortcut_strings" Name="strings" Description="strings" Target="[#strings.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\strings.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#strings.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b0cefdcd-dbda-4495-b6fb-f220f40b3ccc" Id="sync.exe">
-				<File Name="sync.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_sync" Name="sync" Description="sync" Target="[#sync.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="sync.exe" />
+				<Shortcut Id="Shortcut_sync" Name="sync" Description="sync" Target="[#sync.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\sync.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#sync.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="be5b25e6-8874-4712-9a83-32ba7a8b3fe7" Id="Tcpvcon.exe">
-				<File Name="Tcpvcon.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Tcpvcon" Name="Tcpvcon" Description="Tcpvcon" Target="[#Tcpvcon.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Tcpvcon.exe" />
+				<Shortcut Id="Shortcut_Tcpvcon" Name="Tcpvcon" Description="Tcpvcon" Target="[#Tcpvcon.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Tcpvcon.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Tcpvcon.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bf4b135d-eba7-4171-8992-02c0e74501f6" Id="Tcpview.exe">
-				<File Name="Tcpview.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Tcpview" Name="Tcpview" Description="Tcpview" Target="[#Tcpview.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Tcpview.exe" />
+				<Shortcut Id="Shortcut_Tcpview" Name="Tcpview" Description="Tcpview" Target="[#Tcpview.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Tcpview.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Tcpview.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b7012317-516a-4d26-b301-7c20155d7181" Id="vmmap.exe">
-				<File Name="vmmap.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_vmmap" Name="vmmap" Description="vmmap" Target="[#vmmap.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="vmmap.exe" />
+				<Shortcut Id="Shortcut_vmmap" Name="vmmap" Description="vmmap" Target="[#vmmap.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\vmmap.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#vmmap.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bc773346-56d6-40a4-89c3-23d20ccbb278" Id="Volumeid.exe">
-				<File Name="Volumeid.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Volumeid" Name="Volumeid" Description="Volumeid" Target="[#Volumeid.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Volumeid.exe" />
+				<Shortcut Id="Shortcut_Volumeid" Name="Volumeid" Description="Volumeid" Target="[#Volumeid.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Volumeid.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Volumeid.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bbac3fb1-2dc7-4c9d-aa09-bc56768444b1" Id="whois.exe">
-				<File Name="whois.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_whois" Name="whois" Description="whois" Target="[#whois.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="whois.exe" />
+				<Shortcut Id="Shortcut_whois" Name="whois" Description="whois" Target="[#whois.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\whois.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#whois.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bedaa4e5-c890-4435-a6ca-0a5a5cacf024" Id="Winobj.exe">
-				<File Name="Winobj.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_Winobj" Name="Winobj" Description="Winobj" Target="[#Winobj.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="Winobj.exe" />
+				<Shortcut Id="Shortcut_Winobj" Name="Winobj" Description="Winobj" Target="[#Winobj.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\Winobj.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#Winobj.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="bf0ecdff-ec77-434f-9a76-92cac294d7a2" Id="ZoomIt.exe">
-				<File Name="ZoomIt.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_ZoomIt" Name="ZoomIt" Description="ZoomIt" Target="[#ZoomIt.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="ZoomIt.exe" />
+				<Shortcut Id="Shortcut_ZoomIt" Name="ZoomIt" Description="ZoomIt" Target="[#ZoomIt.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\ZoomIt.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#ZoomIt.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b9fd11bb-aced-4bd6-b5f7-473568a09399" Id="accesschk.exe">
-				<File Name="accesschk.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_accesschk" Name="accesschk" Description="accesschk" Target="[#accesschk.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="accesschk.exe" />
+				<Shortcut Id="Shortcut_accesschk" Name="accesschk" Description="accesschk" Target="[#accesschk.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\accesschk.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#accesschk.exe]"/>
+				</RegistryKey>
 			</Component>
 			<Component Guid="b7c1d66c-15d4-4381-99b9-5633af8ca234" Id="AccessEnum.exe">
-				<File Name="AccessEnum.exe" KeyPath="yes" Checksum="yes" />
-				<Shortcut Id="Shortcut_AccessEnum" Name="AccessEnum" Description="AccessEnum" Target="[#AccessEnum.exe]" WorkingDirectory="INSTALLFOLDER" />
+				<File Name="AccessEnum.exe" />
+				<Shortcut Id="Shortcut_AccessEnum" Name="AccessEnum" Description="AccessEnum" Target="[#AccessEnum.exe]" WorkingDirectory="INSTALLFOLDER" Directory="ApplicationProgramsFolder" />
+				<RegistryKey Root="HKCU" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\AccessEnum.exe">
+					<RegistryValue KeyPath="yes" Type="string" Value="[#AccessEnum.exe]"/>
+				</RegistryKey>
 			</Component>
 		</ComponentGroup>
 	</Fragment>
