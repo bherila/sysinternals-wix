@@ -101,87 +101,6 @@
 		</ComponentGroup>
 	</Fragment>
 
-	<!-- shortcuts -->
-	<Fragment>
-		<ComponentGroup Id="ProductShortcuts" Directory="ApplicationProgramsFolder">
-			<Component Guid="ccb5c8de-ecfe-4a32-9f06-32a848ecfffa" Id="CreateFolder">
-				<RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
-			</Component>
-			<Component Guid="c9b5c8de-ecfe-4a32-9f06-32a848ecfffa" Id="Shortcut_portmon.exe"><Shortcut Id="Shortcut_portmon" Name="portmon" Description="portmon" Target="[#portmon.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cabfacf1-c845-48fa-aee5-d42e94263c36" Id="Shortcut_procdump.exe"><Shortcut Id="Shortcut_procdump" Name="procdump" Description="procdump" Target="[#procdump.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c07c7908-bfab-4e8d-86c4-65268240435c" Id="Shortcut_procexp.exe"><Shortcut Id="Shortcut_procexp" Name="procexp" Description="procexp" Target="[#procexp.exe]" WorkingDirectory="INSTALLFOLDER"  /></Component>
-			<Component Guid="c2816196-f944-4e89-bccf-95803999a4a4" Id="Shortcut_Procmon.exe"><Shortcut Id="Shortcut_Procmon" Name="Procmon" Description="Procmon" Target="[#Procmon.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c5b6bb3c-5b6c-4141-aa32-440b81ed6777" Id="Shortcut_ctrl2cap.exe"><Shortcut Id="Shortcut_ctrl2cap" Name="ctrl2cap" Description="ctrl2cap" Target="[#ctrl2cap.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c91960c6-1f70-4605-9cd8-9671b486632e" Id="Shortcut_ADExplorer.exe"><Shortcut Id="Shortcut_ADExplorer" Name="ADExplorer" Description="ADExplorer" Target="[#ADExplorer.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c0479130-998a-41cb-a000-6390f82bd9e7" Id="Shortcut_ADInsight.exe"><Shortcut Id="Shortcut_ADInsight" Name="ADInsight" Description="ADInsight" Target="[#ADInsight.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c8f250d4-1f5c-4562-ade5-d1c1fb566865" Id="Shortcut_adrestore.exe"><Shortcut Id="Shortcut_adrestore" Name="adrestore" Description="adrestore" Target="[#adrestore.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c5ca2a6b-9d73-43f2-ab35-fee5955ee959" Id="Shortcut_Autologon.exe"><Shortcut Id="Shortcut_Autologon" Name="Autologon" Description="Autologon" Target="[#Autologon.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c2dd43ee-550b-4903-9d6a-d0b4d231ef95" Id="Shortcut_autoruns.exe"><Shortcut Id="Shortcut_autoruns" Name="autoruns" Description="autoruns" Target="[#autoruns.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c35d3bdf-11d0-4818-b609-0b439451166e" Id="Shortcut_autorunsc.exe"><Shortcut Id="Shortcut_autorunsc" Name="autorunsc" Description="autorunsc" Target="[#autorunsc.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c1b0087e-9caa-452a-997e-251fc77029f3" Id="Shortcut_Bginfo.exe"><Shortcut Id="Shortcut_Bginfo" Name="Bginfo" Description="Bginfo" Target="[#Bginfo.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c9772842-aa08-4217-919f-81f0159fb890" Id="Shortcut_Cacheset.exe"><Shortcut Id="Shortcut_Cacheset" Name="Cacheset" Description="Cacheset" Target="[#Cacheset.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c6cabe13-72da-4155-aca9-5f30d8771a63" Id="Shortcut_Clockres.exe"><Shortcut Id="Shortcut_Clockres" Name="Clockres" Description="Clockres" Target="[#Clockres.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cb0230c8-300b-4855-a897-287a42cdf95b" Id="Shortcut_Contig.exe"><Shortcut Id="Shortcut_Contig" Name="Contig" Description="Contig" Target="[#Contig.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c6fd55c0-d686-4f66-9550-a43d661a33d0" Id="Shortcut_Coreinfo.exe"><Shortcut Id="Shortcut_Coreinfo" Name="Coreinfo" Description="Coreinfo" Target="[#Coreinfo.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c41699e3-3f26-41cf-81fd-ab7c2317800d" Id="Shortcut_Dbgview.exe"><Shortcut Id="Shortcut_Dbgview" Name="Dbgview" Description="Dbgview" Target="[#Dbgview.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c6e1a704-9b2e-4630-a02f-ef9311728bf1" Id="Shortcut_Desktops.exe"><Shortcut Id="Shortcut_Desktops" Name="Desktops" Description="Desktops" Target="[#Desktops.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c3a083d4-2fdf-4ce6-b32c-b4fb787c45ee" Id="Shortcut_disk2vhd.exe"><Shortcut Id="Shortcut_disk2vhd" Name="disk2vhd" Description="disk2vhd" Target="[#disk2vhd.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="ca9c459f-821b-4fbd-8ee6-b404de7ba23c" Id="Shortcut_diskext.exe"><Shortcut Id="Shortcut_diskext" Name="diskext" Description="diskext" Target="[#diskext.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c48570c0-28a9-4bce-b047-ff9d8a79599e" Id="Shortcut_Diskmon.exe"><Shortcut Id="Shortcut_Diskmon" Name="Diskmon" Description="Diskmon" Target="[#Diskmon.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c4530814-3e4d-4a00-ba02-f3f46fff687e" Id="Shortcut_DiskView.exe"><Shortcut Id="Shortcut_DiskView" Name="DiskView" Description="DiskView" Target="[#DiskView.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c3050378-9e3d-4db2-a3d1-556072344ca6" Id="Shortcut_du.exe"><Shortcut Id="Shortcut_du" Name="du" Description="du" Target="[#du.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cbb76d5c-1e41-434e-99ac-b08705b67a2c" Id="Shortcut_efsdump.exe"><Shortcut Id="Shortcut_efsdump" Name="efsdump" Description="efsdump" Target="[#efsdump.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c6bca915-ead9-4503-a1d9-7772334fafbf" Id="Shortcut_FindLinks.exe"><Shortcut Id="Shortcut_FindLinks" Name="FindLinks" Description="FindLinks" Target="[#FindLinks.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="ce76cb4b-fac6-4fc3-b3e0-f46221084be9" Id="Shortcut_handle.exe"><Shortcut Id="Shortcut_handle" Name="handle" Description="handle" Target="[#handle.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c4a964cf-ce31-4d70-aabb-f758057ea3ae" Id="Shortcut_hex2dec.exe"><Shortcut Id="Shortcut_hex2dec" Name="hex2dec" Description="hex2dec" Target="[#hex2dec.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c7763af4-7a23-4ce0-812b-0af6f7b42117" Id="Shortcut_junction.exe"><Shortcut Id="Shortcut_junction" Name="junction" Description="junction" Target="[#junction.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c21c56d9-8c0b-43b4-8851-7faaa48048f3" Id="Shortcut_ldmdump.exe"><Shortcut Id="Shortcut_ldmdump" Name="ldmdump" Description="ldmdump" Target="[#ldmdump.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c72d22d5-c700-4f4f-b2fb-3f706adcb23a" Id="Shortcut_Listdlls.exe"><Shortcut Id="Shortcut_Listdlls" Name="Listdlls" Description="Listdlls" Target="[#Listdlls.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="ce31dde0-0e08-460f-b178-940cb1df03f6" Id="Shortcut_livekd.exe"><Shortcut Id="Shortcut_livekd" Name="livekd" Description="livekd" Target="[#livekd.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c7b5d23d-55dd-43e8-a28b-989099185876" Id="Shortcut_LoadOrd.exe"><Shortcut Id="Shortcut_LoadOrd" Name="LoadOrd" Description="LoadOrd" Target="[#LoadOrd.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c3503aad-3781-43fe-b5b3-31e82cc1d1e0" Id="Shortcut_logonsessions.exe"><Shortcut Id="Shortcut_logonsessions" Name="logonsessions" Description="logonsessions" Target="[#logonsessions.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="ceef6c50-b9b5-46fe-a6d4-584a4debbd51" Id="Shortcut_movefile.exe"><Shortcut Id="Shortcut_movefile" Name="movefile" Description="movefile" Target="[#movefile.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c2768439-3861-4fcf-81b0-2b58a4c1a59b" Id="Shortcut_ntfsinfo.exe"><Shortcut Id="Shortcut_ntfsinfo" Name="ntfsinfo" Description="ntfsinfo" Target="[#ntfsinfo.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cc7c8a11-88c8-4075-98db-18cab09f86d5" Id="Shortcut_pagedfrg.exe"><Shortcut Id="Shortcut_pagedfrg" Name="pagedfrg" Description="pagedfrg" Target="[#pagedfrg.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="ccb327ed-d879-439d-994a-79507aaeb4b2" Id="Shortcut_pendmoves.exe"><Shortcut Id="Shortcut_pendmoves" Name="pendmoves" Description="pendmoves" Target="[#pendmoves.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cc96ed82-6419-4bf1-acad-60ebee4ebb51" Id="Shortcut_pipelist.exe"><Shortcut Id="Shortcut_pipelist" Name="pipelist" Description="pipelist" Target="[#pipelist.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c6dbfa12-9393-478b-88ba-1bb67543aa9e" Id="Shortcut_PsExec.exe"><Shortcut Id="Shortcut_PsExec" Name="PsExec" Description="PsExec" Target="[#PsExec.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cf412295-811a-4cb1-b31e-67ed5012d1ee" Id="Shortcut_psfile.exe"><Shortcut Id="Shortcut_psfile" Name="psfile" Description="psfile" Target="[#psfile.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cbccaed5-ca9a-45d6-b48a-5b425bf60d97" Id="Shortcut_PsGetsid.exe"><Shortcut Id="Shortcut_PsGetsid" Name="PsGetsid" Description="PsGetsid" Target="[#PsGetsid.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c819ddbe-90b8-47d9-aa80-d4936fe4135f" Id="Shortcut_PsInfo.exe"><Shortcut Id="Shortcut_PsInfo" Name="PsInfo" Description="PsInfo" Target="[#PsInfo.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cc242fdc-057e-4958-a172-81f48b29162e" Id="Shortcut_pskill.exe"><Shortcut Id="Shortcut_pskill" Name="pskill" Description="pskill" Target="[#pskill.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="ce9aa665-8671-4190-b4b4-8e8f02cf9137" Id="Shortcut_pslist.exe"><Shortcut Id="Shortcut_pslist" Name="pslist" Description="pslist" Target="[#pslist.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c4be0499-29cb-4d79-ba45-fb894e92cfc3" Id="Shortcut_PsLoggedon.exe"><Shortcut Id="Shortcut_PsLoggedon" Name="PsLoggedon" Description="PsLoggedon" Target="[#PsLoggedon.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c3b14f35-1611-42f1-b9b1-e0055129bdc5" Id="Shortcut_psloglist.exe"><Shortcut Id="Shortcut_psloglist" Name="psloglist" Description="psloglist" Target="[#psloglist.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cfadd2e9-5947-49db-ae26-d1be1df8074c" Id="Shortcut_pspasswd.exe"><Shortcut Id="Shortcut_pspasswd" Name="pspasswd" Description="pspasswd" Target="[#pspasswd.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c971c36c-16db-4266-add0-248d727b5dc7" Id="Shortcut_psping.exe"><Shortcut Id="Shortcut_psping" Name="psping" Description="psping" Target="[#psping.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c28fec23-614d-49e2-88a4-39353fb109b5" Id="Shortcut_PsService.exe"><Shortcut Id="Shortcut_PsService" Name="PsService" Description="PsService" Target="[#PsService.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cbac04e1-f172-49df-819a-61f6393dce62" Id="Shortcut_psshutdown.exe"><Shortcut Id="Shortcut_psshutdown" Name="psshutdown" Description="psshutdown" Target="[#psshutdown.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c7716064-b8b9-4b74-a369-3ad6852f895b" Id="Shortcut_pssuspend.exe"><Shortcut Id="Shortcut_pssuspend" Name="pssuspend" Description="pssuspend" Target="[#pssuspend.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c20a2be3-d895-48c2-bc07-82c5393d1e45" Id="Shortcut_RAMMap.exe"><Shortcut Id="Shortcut_RAMMap" Name="RAMMap" Description="RAMMap" Target="[#RAMMap.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="ca293aca-09fb-4f9e-8a04-a2b18a860052" Id="Shortcut_RegDelNull.exe"><Shortcut Id="Shortcut_RegDelNull" Name="RegDelNull" Description="RegDelNull" Target="[#RegDelNull.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c392ff78-a9df-40db-91b7-3037bb09adc0" Id="Shortcut_regjump.exe"><Shortcut Id="Shortcut_regjump" Name="regjump" Description="regjump" Target="[#regjump.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cae84232-1338-4b39-8ba9-de66abc23f95" Id="Shortcut_RootkitRevealer.exe"><Shortcut Id="Shortcut_RootkitRevealer" Name="RootkitRevealer" Description="RootkitRevealer" Target="[#RootkitRevealer.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c78ba35e-7a3a-47c5-86a2-5ff6a09692e6" Id="Shortcut_ru.exe"><Shortcut Id="Shortcut_ru" Name="ru" Description="ru" Target="[#ru.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c1112c36-1177-4c2d-879f-ff3091f1ce3f" Id="Shortcut_sdelete.exe"><Shortcut Id="Shortcut_sdelete" Name="sdelete" Description="sdelete" Target="[#sdelete.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cd63caeb-c60e-4ecf-92c5-8969f031083b" Id="Shortcut_ShareEnum.exe"><Shortcut Id="Shortcut_ShareEnum" Name="ShareEnum" Description="ShareEnum" Target="[#ShareEnum.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c486a386-5204-4109-baaf-d9aba5305aa7" Id="Shortcut_ShellRunas.exe"><Shortcut Id="Shortcut_ShellRunas" Name="ShellRunas" Description="ShellRunas" Target="[#ShellRunas.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="ce576d4c-79d6-4105-b084-d7fa0364ac9c" Id="Shortcut_sigcheck.exe"><Shortcut Id="Shortcut_sigcheck" Name="sigcheck" Description="sigcheck" Target="[#sigcheck.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c9ec6c73-f94c-4a0c-92c7-6d91105191d0" Id="Shortcut_streams.exe"><Shortcut Id="Shortcut_streams" Name="streams" Description="streams" Target="[#streams.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cc344c1e-8942-4dd5-a26d-88e503d20d20" Id="Shortcut_strings.exe"><Shortcut Id="Shortcut_strings" Name="strings" Description="strings" Target="[#strings.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c0cefdcd-dbda-4495-b6fb-f220f40b3ccc" Id="Shortcut_sync.exe"><Shortcut Id="Shortcut_sync" Name="sync" Description="sync" Target="[#sync.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="ce5b25e6-8874-4712-9a83-32ba7a8b3fe7" Id="Shortcut_Tcpvcon.exe"><Shortcut Id="Shortcut_Tcpvcon" Name="Tcpvcon" Description="Tcpvcon" Target="[#Tcpvcon.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cf4b135d-eba7-4171-8992-02c0e74501f6" Id="Shortcut_Tcpview.exe"><Shortcut Id="Shortcut_Tcpview" Name="Tcpview" Description="Tcpview" Target="[#Tcpview.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c7012317-516a-4d26-b301-7c20155d7181" Id="Shortcut_vmmap.exe"><Shortcut Id="Shortcut_vmmap" Name="vmmap" Description="vmmap" Target="[#vmmap.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cc773346-56d6-40a4-89c3-23d20ccbb278" Id="Shortcut_Volumeid.exe"><Shortcut Id="Shortcut_Volumeid" Name="Volumeid" Description="Volumeid" Target="[#Volumeid.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cbac3fb1-2dc7-4c9d-aa09-bc56768444b1" Id="Shortcut_whois.exe"><Shortcut Id="Shortcut_whois" Name="whois" Description="whois" Target="[#whois.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cedaa4e5-c890-4435-a6ca-0a5a5cacf024" Id="Shortcut_Winobj.exe"><Shortcut Id="Shortcut_Winobj" Name="Winobj" Description="Winobj" Target="[#Winobj.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="cf0ecdff-ec77-434f-9a76-92cac294d7a2" Id="Shortcut_ZoomIt.exe"><Shortcut Id="Shortcut_ZoomIt" Name="ZoomIt" Description="ZoomIt" Target="[#ZoomIt.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c9fd11bb-aced-4bd6-b5f7-473568a09399" Id="Shortcut_accesschk.exe"><Shortcut Id="Shortcut_accesschk" Name="accesschk" Description="accesschk" Target="[#accesschk.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-			<Component Guid="c7c1d66c-15d4-4381-99b9-5633af8ca234" Id="Shortcut_AccessEnum.exe"><Shortcut Id="Shortcut_AccessEnum" Name="AccessEnum" Description="AccessEnum" Target="[#AccessEnum.exe]" WorkingDirectory="INSTALLFOLDER" /></Component>
-		</ComponentGroup>
-	</Fragment>
-	
 	<!-- files to install -->
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
@@ -195,92 +114,308 @@
 			<Component Guid="bee154c8-b867-4d84-b4b6-146eb91780cd" Id="DISKMON.HLP"><File Name="DISKMON.HLP" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="bc55e986-a433-428b-b29d-c61c505119f0" Id="DMON.SYS"><File Name="DMON.SYS" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="b2c760d6-2a3c-43d6-934c-7ee5e157fee1" Id="Eula.txt"><File Name="Eula.txt" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b9b5c8de-ecfe-4a32-9f06-32a848ecfffa" Id="portmon.exe"><File Name="portmon.exe" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="bafb3f03-ad6c-4db6-b22b-c2240ab58208" Id="pagedfrg.hlp"><File Name="pagedfrg.hlp" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="bb542eac-930b-4936-9e70-2f4f2803c233" Id="PORTMON.CNT"><File Name="PORTMON.CNT" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="bfbffd06-da1c-4b3d-a1b4-2bb76c9910fe" Id="PORTMON.HLP"><File Name="PORTMON.HLP" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="babfacf1-c845-48fa-aee5-d42e94263c36" Id="procdump.exe"><File Name="procdump.exe" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="b81e7475-fd99-4c85-baf0-f7d98ff10f15" Id="procexp.chm"><File Name="procexp.chm" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b07c7908-bfab-4e8d-86c4-65268240435c" Id="procexp.exe"><File Name="procexp.exe" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="bec1876c-d599-4fea-b026-f942ac2014ce" Id="procmon.chm"><File Name="procmon.chm" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b2816196-f944-4e89-bccf-95803999a4a4" Id="Procmon.exe"><File Name="Procmon.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b5b6bb3c-5b6c-4141-aa32-440b81ed6777" Id="ctrl2cap.exe"><File Name="ctrl2cap.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b91960c6-1f70-4605-9cd8-9671b486632e" Id="ADExplorer.exe"><File Name="ADExplorer.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b0479130-998a-41cb-a000-6390f82bd9e7" Id="ADInsight.exe"><File Name="ADInsight.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b8f250d4-1f5c-4562-ade5-d1c1fb566865" Id="adrestore.exe"><File Name="adrestore.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b5ca2a6b-9d73-43f2-ab35-fee5955ee959" Id="Autologon.exe"><File Name="Autologon.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b2dd43ee-550b-4903-9d6a-d0b4d231ef95" Id="autoruns.exe"><File Name="autoruns.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b35d3bdf-11d0-4818-b609-0b439451166e" Id="autorunsc.exe"><File Name="autorunsc.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b1b0087e-9caa-452a-997e-251fc77029f3" Id="Bginfo.exe"><File Name="Bginfo.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b9772842-aa08-4217-919f-81f0159fb890" Id="Cacheset.exe"><File Name="Cacheset.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b6cabe13-72da-4155-aca9-5f30d8771a63" Id="Clockres.exe"><File Name="Clockres.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bb0230c8-300b-4855-a897-287a42cdf95b" Id="Contig.exe"><File Name="Contig.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b6fd55c0-d686-4f66-9550-a43d661a33d0" Id="Coreinfo.exe"><File Name="Coreinfo.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b41699e3-3f26-41cf-81fd-ab7c2317800d" Id="Dbgview.exe"><File Name="Dbgview.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b6e1a704-9b2e-4630-a02f-ef9311728bf1" Id="Desktops.exe"><File Name="Desktops.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b3a083d4-2fdf-4ce6-b32c-b4fb787c45ee" Id="disk2vhd.exe"><File Name="disk2vhd.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="ba9c459f-821b-4fbd-8ee6-b404de7ba23c" Id="diskext.exe"><File Name="diskext.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b48570c0-28a9-4bce-b047-ff9d8a79599e" Id="Diskmon.exe"><File Name="Diskmon.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b4530814-3e4d-4a00-ba02-f3f46fff687e" Id="DiskView.exe"><File Name="DiskView.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b3050378-9e3d-4db2-a3d1-556072344ca6" Id="du.exe"><File Name="du.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bbb76d5c-1e41-434e-99ac-b08705b67a2c" Id="efsdump.exe"><File Name="efsdump.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b6bca915-ead9-4503-a1d9-7772334fafbf" Id="FindLinks.exe"><File Name="FindLinks.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="be76cb4b-fac6-4fc3-b3e0-f46221084be9" Id="handle.exe"><File Name="handle.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b4a964cf-ce31-4d70-aabb-f758057ea3ae" Id="hex2dec.exe"><File Name="hex2dec.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b7763af4-7a23-4ce0-812b-0af6f7b42117" Id="junction.exe"><File Name="junction.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b21c56d9-8c0b-43b4-8851-7faaa48048f3" Id="ldmdump.exe"><File Name="ldmdump.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b72d22d5-c700-4f4f-b2fb-3f706adcb23a" Id="Listdlls.exe"><File Name="Listdlls.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="be31dde0-0e08-460f-b178-940cb1df03f6" Id="livekd.exe"><File Name="livekd.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b7b5d23d-55dd-43e8-a28b-989099185876" Id="LoadOrd.exe"><File Name="LoadOrd.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b3503aad-3781-43fe-b5b3-31e82cc1d1e0" Id="logonsessions.exe"><File Name="logonsessions.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="beef6c50-b9b5-46fe-a6d4-584a4debbd51" Id="movefile.exe"><File Name="movefile.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b2768439-3861-4fcf-81b0-2b58a4c1a59b" Id="ntfsinfo.exe"><File Name="ntfsinfo.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bc7c8a11-88c8-4075-98db-18cab09f86d5" Id="pagedfrg.exe"><File Name="pagedfrg.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bcb327ed-d879-439d-994a-79507aaeb4b2" Id="pendmoves.exe"><File Name="pendmoves.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bc96ed82-6419-4bf1-acad-60ebee4ebb51" Id="pipelist.exe"><File Name="pipelist.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b6dbfa12-9393-478b-88ba-1bb67543aa9e" Id="PsExec.exe"><File Name="PsExec.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bf412295-811a-4cb1-b31e-67ed5012d1ee" Id="psfile.exe"><File Name="psfile.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bbccaed5-ca9a-45d6-b48a-5b425bf60d97" Id="PsGetsid.exe"><File Name="PsGetsid.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b819ddbe-90b8-47d9-aa80-d4936fe4135f" Id="PsInfo.exe"><File Name="PsInfo.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bc242fdc-057e-4958-a172-81f48b29162e" Id="pskill.exe"><File Name="pskill.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="be9aa665-8671-4190-b4b4-8e8f02cf9137" Id="pslist.exe"><File Name="pslist.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b4be0499-29cb-4d79-ba45-fb894e92cfc3" Id="PsLoggedon.exe"><File Name="PsLoggedon.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b3b14f35-1611-42f1-b9b1-e0055129bdc5" Id="psloglist.exe"><File Name="psloglist.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bfadd2e9-5947-49db-ae26-d1be1df8074c" Id="pspasswd.exe"><File Name="pspasswd.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b971c36c-16db-4266-add0-248d727b5dc7" Id="psping.exe"><File Name="psping.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b28fec23-614d-49e2-88a4-39353fb109b5" Id="PsService.exe"><File Name="PsService.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bbac04e1-f172-49df-819a-61f6393dce62" Id="psshutdown.exe"><File Name="psshutdown.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b7716064-b8b9-4b74-a369-3ad6852f895b" Id="pssuspend.exe"><File Name="pssuspend.exe" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="bd82a4ba-de9c-4a05-a74d-ad7d2d053c4e" Id="Pstools.chm"><File Name="Pstools.chm" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="b8523c69-6fca-4593-8b5e-92811edae4c8" Id="psversion.txt"><File Name="psversion.txt" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b20a2be3-d895-48c2-bc07-82c5393d1e45" Id="RAMMap.exe"><File Name="RAMMap.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b57206e4-32a4-4d36-bf8e-3a8ca37dafdc" Id="readme.txt"><File Name="readme.txt" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="ba293aca-09fb-4f9e-8a04-a2b18a860052" Id="RegDelNull.exe"><File Name="RegDelNull.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b392ff78-a9df-40db-91b7-3037bb09adc0" Id="regjump.exe"><File Name="regjump.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b6f6d350-35a5-421c-90a1-39d55fb8499a" Id="RootkitRevealer.chm"><File Name="RootkitRevealer.chm" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bae84232-1338-4b39-8ba9-de66abc23f95" Id="RootkitRevealer.exe"><File Name="RootkitRevealer.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b78ba35e-7a3a-47c5-86a2-5ff6a09692e6" Id="ru.exe"><File Name="ru.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b1112c36-1177-4c2d-879f-ff3091f1ce3f" Id="sdelete.exe"><File Name="sdelete.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bd63caeb-c60e-4ecf-92c5-8969f031083b" Id="ShareEnum.exe"><File Name="ShareEnum.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b486a386-5204-4109-baaf-d9aba5305aa7" Id="ShellRunas.exe"><File Name="ShellRunas.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="be576d4c-79d6-4105-b084-d7fa0364ac9c" Id="sigcheck.exe"><File Name="sigcheck.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b9ec6c73-f94c-4a0c-92c7-6d91105191d0" Id="streams.exe"><File Name="streams.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bc344c1e-8942-4dd5-a26d-88e503d20d20" Id="strings.exe"><File Name="strings.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b0cefdcd-dbda-4495-b6fb-f220f40b3ccc" Id="sync.exe"><File Name="sync.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="be5b25e6-8874-4712-9a83-32ba7a8b3fe7" Id="Tcpvcon.exe"><File Name="Tcpvcon.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b06d6ed7-49d8-477a-86e2-985f70d7a52d" Id="tcpview.chm"><File Name="tcpview.chm" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bf4b135d-eba7-4171-8992-02c0e74501f6" Id="Tcpview.exe"><File Name="Tcpview.exe" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="b5426117-c729-4432-a155-a13ee7e173ec" Id="TCPVIEW.HLP"><File Name="TCPVIEW.HLP" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="b17414c4-bc21-4706-b3f4-a724e33b2da1" Id="Vmmap.chm"><File Name="Vmmap.chm" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b7012317-516a-4d26-b301-7c20155d7181" Id="vmmap.exe"><File Name="vmmap.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bc773346-56d6-40a4-89c3-23d20ccbb278" Id="Volumeid.exe"><File Name="Volumeid.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bbac3fb1-2dc7-4c9d-aa09-bc56768444b1" Id="whois.exe"><File Name="whois.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bedaa4e5-c890-4435-a6ca-0a5a5cacf024" Id="Winobj.exe"><File Name="Winobj.exe" KeyPath="yes" Checksum="yes" /></Component>
+			<Component Guid="b06d6ed7-49d8-477a-86e2-985f70d7a52d" Id="tcpview.chm"><File Name="tcpview.chm" KeyPath="yes" Checksum="yes" /></Component>
+			<Component Guid="b6f6d350-35a5-421c-90a1-39d55fb8499a" Id="RootkitRevealer.chm"><File Name="RootkitRevealer.chm" KeyPath="yes" Checksum="yes" /></Component>
+			<Component Guid="b57206e4-32a4-4d36-bf8e-3a8ca37dafdc" Id="readme.txt"><File Name="readme.txt" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="baa22f4c-417c-4eea-8a0f-8d6f577fb9ad" Id="WINOBJ.HLP"><File Name="WINOBJ.HLP" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="bf0ecdff-ec77-434f-9a76-92cac294d7a2" Id="ZoomIt.exe"><File Name="ZoomIt.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b9fd11bb-aced-4bd6-b5f7-473568a09399" Id="accesschk.exe"><File Name="accesschk.exe" KeyPath="yes" Checksum="yes" /></Component>
-			<Component Guid="b7c1d66c-15d4-4381-99b9-5633af8ca234" Id="AccessEnum.exe"><File Name="AccessEnum.exe" KeyPath="yes" Checksum="yes" /></Component>
 			<Component Guid="b1e60984-26d6-4153-87e0-2a591f645365" Id="AdExplorer.chm"><File Name="AdExplorer.chm" KeyPath="yes" Checksum="yes" /></Component>
+			<Component Guid="b2816196-f944-4e89-bccf-95803999a4a4" Id="Procmon.exe">
+				<File Name="Procmon.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Procmon" Name="Procmon" Description="Procmon" Target="[#Procmon.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b9b5c8de-ecfe-4a32-9f06-32a848ecfffa" Id="portmon.exe">
+				<File Name="portmon.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_portmon" Name="portmon" Description="portmon" Target="[#portmon.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="babfacf1-c845-48fa-aee5-d42e94263c36" Id="procdump.exe">
+				<File Name="procdump.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_procdump" Name="procdump" Description="procdump" Target="[#procdump.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b07c7908-bfab-4e8d-86c4-65268240435c" Id="procexp.exe">
+				<File Name="procexp.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_procexp" Name="procexp" Description="procexp" Target="[#procexp.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b5b6bb3c-5b6c-4141-aa32-440b81ed6777" Id="ctrl2cap.exe">
+				<File Name="ctrl2cap.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_ctrl2cap" Name="ctrl2cap" Description="ctrl2cap" Target="[#ctrl2cap.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b91960c6-1f70-4605-9cd8-9671b486632e" Id="ADExplorer.exe">
+				<File Name="ADExplorer.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_ADExplorer" Name="ADExplorer" Description="ADExplorer" Target="[#ADExplorer.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b0479130-998a-41cb-a000-6390f82bd9e7" Id="ADInsight.exe">
+				<File Name="ADInsight.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_ADInsight" Name="ADInsight" Description="ADInsight" Target="[#ADInsight.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b8f250d4-1f5c-4562-ade5-d1c1fb566865" Id="adrestore.exe">
+				<File Name="adrestore.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_adrestore" Name="adrestore" Description="adrestore" Target="[#adrestore.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b5ca2a6b-9d73-43f2-ab35-fee5955ee959" Id="Autologon.exe">
+				<File Name="Autologon.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Autologon" Name="Autologon" Description="Autologon" Target="[#Autologon.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b2dd43ee-550b-4903-9d6a-d0b4d231ef95" Id="autoruns.exe">
+				<File Name="autoruns.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_autoruns" Name="autoruns" Description="autoruns" Target="[#autoruns.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b35d3bdf-11d0-4818-b609-0b439451166e" Id="autorunsc.exe">
+				<File Name="autorunsc.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_autorunsc" Name="autorunsc" Description="autorunsc" Target="[#autorunsc.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b1b0087e-9caa-452a-997e-251fc77029f3" Id="Bginfo.exe">
+				<File Name="Bginfo.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Bginfo" Name="Bginfo" Description="Bginfo" Target="[#Bginfo.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b9772842-aa08-4217-919f-81f0159fb890" Id="Cacheset.exe">
+				<File Name="Cacheset.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Cacheset" Name="Cacheset" Description="Cacheset" Target="[#Cacheset.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b6cabe13-72da-4155-aca9-5f30d8771a63" Id="Clockres.exe">
+				<File Name="Clockres.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Clockres" Name="Clockres" Description="Clockres" Target="[#Clockres.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bb0230c8-300b-4855-a897-287a42cdf95b" Id="Contig.exe">
+				<File Name="Contig.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Contig" Name="Contig" Description="Contig" Target="[#Contig.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b6fd55c0-d686-4f66-9550-a43d661a33d0" Id="Coreinfo.exe">
+				<File Name="Coreinfo.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Coreinfo" Name="Coreinfo" Description="Coreinfo" Target="[#Coreinfo.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b41699e3-3f26-41cf-81fd-ab7c2317800d" Id="Dbgview.exe">
+				<File Name="Dbgview.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Dbgview" Name="Dbgview" Description="Dbgview" Target="[#Dbgview.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b6e1a704-9b2e-4630-a02f-ef9311728bf1" Id="Desktops.exe">
+				<File Name="Desktops.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Desktops" Name="Desktops" Description="Desktops" Target="[#Desktops.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b3a083d4-2fdf-4ce6-b32c-b4fb787c45ee" Id="disk2vhd.exe">
+				<File Name="disk2vhd.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_disk2vhd" Name="disk2vhd" Description="disk2vhd" Target="[#disk2vhd.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="ba9c459f-821b-4fbd-8ee6-b404de7ba23c" Id="diskext.exe">
+				<File Name="diskext.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_diskext" Name="diskext" Description="diskext" Target="[#diskext.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b48570c0-28a9-4bce-b047-ff9d8a79599e" Id="Diskmon.exe">
+				<File Name="Diskmon.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Diskmon" Name="Diskmon" Description="Diskmon" Target="[#Diskmon.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b4530814-3e4d-4a00-ba02-f3f46fff687e" Id="DiskView.exe">
+				<File Name="DiskView.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_DiskView" Name="DiskView" Description="DiskView" Target="[#DiskView.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b3050378-9e3d-4db2-a3d1-556072344ca6" Id="du.exe">
+				<File Name="du.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_du" Name="du" Description="du" Target="[#du.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bbb76d5c-1e41-434e-99ac-b08705b67a2c" Id="efsdump.exe">
+				<File Name="efsdump.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_efsdump" Name="efsdump" Description="efsdump" Target="[#efsdump.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b6bca915-ead9-4503-a1d9-7772334fafbf" Id="FindLinks.exe">
+				<File Name="FindLinks.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_FindLinks" Name="FindLinks" Description="FindLinks" Target="[#FindLinks.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="be76cb4b-fac6-4fc3-b3e0-f46221084be9" Id="handle.exe">
+				<File Name="handle.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_handle" Name="handle" Description="handle" Target="[#handle.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b4a964cf-ce31-4d70-aabb-f758057ea3ae" Id="hex2dec.exe">
+				<File Name="hex2dec.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_hex2dec" Name="hex2dec" Description="hex2dec" Target="[#hex2dec.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b7763af4-7a23-4ce0-812b-0af6f7b42117" Id="junction.exe">
+				<File Name="junction.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_junction" Name="junction" Description="junction" Target="[#junction.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b21c56d9-8c0b-43b4-8851-7faaa48048f3" Id="ldmdump.exe">
+				<File Name="ldmdump.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_ldmdump" Name="ldmdump" Description="ldmdump" Target="[#ldmdump.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b72d22d5-c700-4f4f-b2fb-3f706adcb23a" Id="Listdlls.exe">
+				<File Name="Listdlls.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Listdlls" Name="Listdlls" Description="Listdlls" Target="[#Listdlls.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="be31dde0-0e08-460f-b178-940cb1df03f6" Id="livekd.exe">
+				<File Name="livekd.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_livekd" Name="livekd" Description="livekd" Target="[#livekd.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b7b5d23d-55dd-43e8-a28b-989099185876" Id="LoadOrd.exe">
+				<File Name="LoadOrd.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_LoadOrd" Name="LoadOrd" Description="LoadOrd" Target="[#LoadOrd.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b3503aad-3781-43fe-b5b3-31e82cc1d1e0" Id="logonsessions.exe">
+				<File Name="logonsessions.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_logonsessions" Name="logonsessions" Description="logonsessions" Target="[#logonsessions.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="beef6c50-b9b5-46fe-a6d4-584a4debbd51" Id="movefile.exe">
+				<File Name="movefile.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_movefile" Name="movefile" Description="movefile" Target="[#movefile.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b2768439-3861-4fcf-81b0-2b58a4c1a59b" Id="ntfsinfo.exe">
+				<File Name="ntfsinfo.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_ntfsinfo" Name="ntfsinfo" Description="ntfsinfo" Target="[#ntfsinfo.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bc7c8a11-88c8-4075-98db-18cab09f86d5" Id="pagedfrg.exe">
+				<File Name="pagedfrg.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_pagedfrg" Name="pagedfrg" Description="pagedfrg" Target="[#pagedfrg.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bcb327ed-d879-439d-994a-79507aaeb4b2" Id="pendmoves.exe">
+				<File Name="pendmoves.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_pendmoves" Name="pendmoves" Description="pendmoves" Target="[#pendmoves.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bc96ed82-6419-4bf1-acad-60ebee4ebb51" Id="pipelist.exe">
+				<File Name="pipelist.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_pipelist" Name="pipelist" Description="pipelist" Target="[#pipelist.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b6dbfa12-9393-478b-88ba-1bb67543aa9e" Id="PsExec.exe">
+				<File Name="PsExec.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_PsExec" Name="PsExec" Description="PsExec" Target="[#PsExec.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bf412295-811a-4cb1-b31e-67ed5012d1ee" Id="psfile.exe">
+				<File Name="psfile.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_psfile" Name="psfile" Description="psfile" Target="[#psfile.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bbccaed5-ca9a-45d6-b48a-5b425bf60d97" Id="PsGetsid.exe">
+				<File Name="PsGetsid.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_PsGetsid" Name="PsGetsid" Description="PsGetsid" Target="[#PsGetsid.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b819ddbe-90b8-47d9-aa80-d4936fe4135f" Id="PsInfo.exe">
+				<File Name="PsInfo.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_PsInfo" Name="PsInfo" Description="PsInfo" Target="[#PsInfo.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bc242fdc-057e-4958-a172-81f48b29162e" Id="pskill.exe">
+				<File Name="pskill.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_pskill" Name="pskill" Description="pskill" Target="[#pskill.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="be9aa665-8671-4190-b4b4-8e8f02cf9137" Id="pslist.exe">
+				<File Name="pslist.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_pslist" Name="pslist" Description="pslist" Target="[#pslist.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b4be0499-29cb-4d79-ba45-fb894e92cfc3" Id="PsLoggedon.exe">
+				<File Name="PsLoggedon.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_PsLoggedon" Name="PsLoggedon" Description="PsLoggedon" Target="[#PsLoggedon.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b3b14f35-1611-42f1-b9b1-e0055129bdc5" Id="psloglist.exe">
+				<File Name="psloglist.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_psloglist" Name="psloglist" Description="psloglist" Target="[#psloglist.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bfadd2e9-5947-49db-ae26-d1be1df8074c" Id="pspasswd.exe">
+				<File Name="pspasswd.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_pspasswd" Name="pspasswd" Description="pspasswd" Target="[#pspasswd.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b971c36c-16db-4266-add0-248d727b5dc7" Id="psping.exe">
+				<File Name="psping.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_psping" Name="psping" Description="psping" Target="[#psping.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b28fec23-614d-49e2-88a4-39353fb109b5" Id="PsService.exe">
+				<File Name="PsService.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_PsService" Name="PsService" Description="PsService" Target="[#PsService.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bbac04e1-f172-49df-819a-61f6393dce62" Id="psshutdown.exe">
+				<File Name="psshutdown.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_psshutdown" Name="psshutdown" Description="psshutdown" Target="[#psshutdown.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b7716064-b8b9-4b74-a369-3ad6852f895b" Id="pssuspend.exe">
+				<File Name="pssuspend.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_pssuspend" Name="pssuspend" Description="pssuspend" Target="[#pssuspend.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b20a2be3-d895-48c2-bc07-82c5393d1e45" Id="RAMMap.exe">
+				<File Name="RAMMap.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_RAMMap" Name="RAMMap" Description="RAMMap" Target="[#RAMMap.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="ba293aca-09fb-4f9e-8a04-a2b18a860052" Id="RegDelNull.exe">
+				<File Name="RegDelNull.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_RegDelNull" Name="RegDelNull" Description="RegDelNull" Target="[#RegDelNull.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b392ff78-a9df-40db-91b7-3037bb09adc0" Id="regjump.exe">
+				<File Name="regjump.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_regjump" Name="regjump" Description="regjump" Target="[#regjump.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bae84232-1338-4b39-8ba9-de66abc23f95" Id="RootkitRevealer.exe">
+				<File Name="RootkitRevealer.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_RootkitRevealer" Name="RootkitRevealer" Description="RootkitRevealer" Target="[#RootkitRevealer.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b78ba35e-7a3a-47c5-86a2-5ff6a09692e6" Id="ru.exe">
+				<File Name="ru.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_ru" Name="ru" Description="ru" Target="[#ru.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b1112c36-1177-4c2d-879f-ff3091f1ce3f" Id="sdelete.exe">
+				<File Name="sdelete.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_sdelete" Name="sdelete" Description="sdelete" Target="[#sdelete.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bd63caeb-c60e-4ecf-92c5-8969f031083b" Id="ShareEnum.exe">
+				<File Name="ShareEnum.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_ShareEnum" Name="ShareEnum" Description="ShareEnum" Target="[#ShareEnum.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b486a386-5204-4109-baaf-d9aba5305aa7" Id="ShellRunas.exe">
+				<File Name="ShellRunas.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_ShellRunas" Name="ShellRunas" Description="ShellRunas" Target="[#ShellRunas.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="be576d4c-79d6-4105-b084-d7fa0364ac9c" Id="sigcheck.exe">
+				<File Name="sigcheck.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_sigcheck" Name="sigcheck" Description="sigcheck" Target="[#sigcheck.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b9ec6c73-f94c-4a0c-92c7-6d91105191d0" Id="streams.exe">
+				<File Name="streams.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_streams" Name="streams" Description="streams" Target="[#streams.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bc344c1e-8942-4dd5-a26d-88e503d20d20" Id="strings.exe">
+				<File Name="strings.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_strings" Name="strings" Description="strings" Target="[#strings.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b0cefdcd-dbda-4495-b6fb-f220f40b3ccc" Id="sync.exe">
+				<File Name="sync.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_sync" Name="sync" Description="sync" Target="[#sync.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="be5b25e6-8874-4712-9a83-32ba7a8b3fe7" Id="Tcpvcon.exe">
+				<File Name="Tcpvcon.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Tcpvcon" Name="Tcpvcon" Description="Tcpvcon" Target="[#Tcpvcon.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bf4b135d-eba7-4171-8992-02c0e74501f6" Id="Tcpview.exe">
+				<File Name="Tcpview.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Tcpview" Name="Tcpview" Description="Tcpview" Target="[#Tcpview.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b7012317-516a-4d26-b301-7c20155d7181" Id="vmmap.exe">
+				<File Name="vmmap.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_vmmap" Name="vmmap" Description="vmmap" Target="[#vmmap.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bc773346-56d6-40a4-89c3-23d20ccbb278" Id="Volumeid.exe">
+				<File Name="Volumeid.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Volumeid" Name="Volumeid" Description="Volumeid" Target="[#Volumeid.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bbac3fb1-2dc7-4c9d-aa09-bc56768444b1" Id="whois.exe">
+				<File Name="whois.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_whois" Name="whois" Description="whois" Target="[#whois.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bedaa4e5-c890-4435-a6ca-0a5a5cacf024" Id="Winobj.exe">
+				<File Name="Winobj.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_Winobj" Name="Winobj" Description="Winobj" Target="[#Winobj.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="bf0ecdff-ec77-434f-9a76-92cac294d7a2" Id="ZoomIt.exe">
+				<File Name="ZoomIt.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_ZoomIt" Name="ZoomIt" Description="ZoomIt" Target="[#ZoomIt.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b9fd11bb-aced-4bd6-b5f7-473568a09399" Id="accesschk.exe">
+				<File Name="accesschk.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_accesschk" Name="accesschk" Description="accesschk" Target="[#accesschk.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
+			<Component Guid="b7c1d66c-15d4-4381-99b9-5633af8ca234" Id="AccessEnum.exe">
+				<File Name="AccessEnum.exe" KeyPath="yes" Checksum="yes" />
+				<Shortcut Id="Shortcut_AccessEnum" Name="AccessEnum" Description="AccessEnum" Target="[#AccessEnum.exe]" WorkingDirectory="INSTALLFOLDER" />
+			</Component>
 		</ComponentGroup>
 	</Fragment>
 </Wix>
