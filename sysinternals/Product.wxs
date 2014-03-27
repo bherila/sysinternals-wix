@@ -17,7 +17,6 @@
 
 		<Feature Id="ProductFeature" Title="Sysinternals" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
-			<ComponentGroupRef Id="ProductShortcuts" />
 			<ComponentGroupRef Id="ProductAppPaths" />
 		</Feature>
 
